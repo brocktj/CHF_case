@@ -1,0 +1,13 @@
+<%inherit file="/homepage/templates/base_ajax.htm" />
+
+<%block name="content">
+
+<form id ="sign_up_form" method="POST" action="/Account/SignUp.loginform/${ request.urlparams[0] }">
+<table>
+        ${ form }
+        <tr>
+            <td><button type="submit" class="btn btn-primary">Submit</button></td>
+        </tr>
+</table>
+</form>
+</%block>

@@ -1,0 +1,13 @@
+.item_container {
+    margin: 12px;
+    display: inline-block;
+}
+
+.item_container > img {
+
+    max-height: 150px;
+    max-width:150px;
+    margin: 12px;
+
+
+}

@@ -1,0 +1,85 @@
+<%inherit file="/homepage/templates/base.htm" />
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<%block name="content">
+<body>
+<form id="live-search" action="" class="styled" method="post">
+    <fieldset>
+        Search:<input type="text" class="text-input" id="filter" value="" />
+        <span id="filter-count"></span>
+    </fieldset>
+</form>
+<a href="/Store/ShoppingCart.delete_cart">Delete the cart</a>
+<div>
+    <h2>Products</h2>
+<table class="table">
+    <tr>
+
+    %for BulkProduct in blkProducts:
+
+    <td>
+    <div class="item_container">
+        <img  class="center=block" src="${ settings.STATIC_URL}Store//media/images/Bulk${ BulkProduct.id }.jpg" />
+        <div> <strong>${ BulkProduct.name }</strong></div>
+        <div>$${ BulkProduct.current_price }</div>
+        <a href="/Store/BulkItemDetail/${ BulkProduct.id }">View Details</a>
+        <div>
+        Quantity:<input class="input_field" type="number" id="qty${ BulkProduct.id }" value="1">
+        </div>
+        <div>
+        <button data-pid="${ BulkProduct.id }" class='add_button btn btn-warning'>Buy Now</button>
+        </div>
+    </div>
+        </td>
+    %endfor
+    </tr>
+    </table>
+</div>
+<div>
+    <h2>Rentable Items</h2>
+<table class="table">
+    <tr>
+
+    %for WardrobeItem in wdbItems:
+
+    <td>
+    <div class="item_container">
+        <img  class="center=block" src="${ settings.STATIC_URL}Store//media/images/wdb${ WardrobeItem.id }.jpg" />
+        <div> <strong>${ WardrobeItem.name }</strong></div>
+        <div>$${ WardrobeItem.standard_rental_value }</div>
+        <a href="/Store/RentalItemDetail/${ WardrobeItem.id }">View Details</a>
+        <div>
+        %if WardrobeItem.is_available_for_rental:
+            Available
+        %else:
+            <span id="unavailable_rental">Unavailable</span>
+        %endif
+        </div>
+        <div>
+        <button data-pid="${ WardrobeItem.id }" class='add_button_rental btn btn-warning'>Buy Now</button>
+        </div>
+    </div>
+        </td>
+    %endfor
+    </tr>
+    </table>
+</div>
+<div>
+    <h2>Personalized Products</h2>
+    %for PersonalProduct in persProducts:
+    <div class="item_container">
+        <img src="${ settings.STATIC_URL}/Store/media/images/pers${ PersonalProduct.id }.jpg" />
+        <div> ${ PersonalProduct.name }</div>
+        <div>$${ PersonalProduct.current_price }</div>
+        <a href="/Store/PersonalItemDetail/${ PersonalProduct.id }">View Details</a> <a class="btn btn-warning" href="/Store/StoreView.add_to_cart/${ PersonalProduct.id }">Buy Now</a>
+    </div>
+    %endfor
+    </div>
+
+</body>
+</%block>
+</html>

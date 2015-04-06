@@ -1,0 +1,38 @@
+<%inherit file="/homepage/templates/Managerbase.htm" />
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<%block name="content">
+<a href="/Store/RentedLineItem.Create">Add Item</a>
+<table class="table table-striped">
+    <tr>
+        <th>Item</th>
+        <th>Date Out</th>
+        <th>Date Due</th>
+        <th>Renter</th>
+        <th>Modifier</th>
+
+    </tr>
+
+    %for RentedLineItem in wdbItems:
+    <tr>
+        <td>${ RentedLineItem.wardrobe_item_ID.name }</td>
+        <td>${ RentedLineItem.date_out }</td>
+        <td>${ RentedLineItem.date_due }</td>
+        %if RentedLineItem.transaction_ID is not None:
+        <td>${ RentedLineItem.transaction_ID.customer.first_name }</td>
+        %else:
+        <td></td>
+        %endif
+        <td> <a href="/Store/WardrobeItem.check_in/${ RentedLineItem.id }">Edit</a> | <a href="/Store/RentedLineItem.Delete/${ RentedLineItem.id }">Delete</a>  </td>
+
+    </tr>
+    %endfor
+</table>
+</%block>
+</body>
+</html>

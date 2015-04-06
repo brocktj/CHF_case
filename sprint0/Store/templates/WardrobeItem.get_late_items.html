@@ -1,0 +1,86 @@
+<%inherit file="/homepage/templates/base.htm" />
+<%! import homepage.models as hmod %>
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<%block name="content">
+<a href="/Store/WardrobeItem.send_late_emails" class="btn btn-success">Send Email Notices</a>
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Size</th>
+        <th>Date out</th>
+        <th>Date Due</th>
+    </tr>
+    <tr>
+        <td>Over 30 days late</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    %for RentedLineItem in late_items_30:
+
+        <% rentedItem = hmod.WardrobeItem.objects.get(id=RentedLineItem.wardrobe_item_ID.id) %>
+    <tr>
+        <td>${ rentedItem.id }</td>
+        <td>${ rentedItem.name }</td>
+        <td>${ rentedItem.size }</td>
+        <td>${ RentedLineItem.date_out }</td>
+        <td>${ RentedLineItem.date_due }</td>
+
+
+    </tr>
+    %endfor
+
+    <tr>
+        <td>Over 60 days late</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    %for RentedLineItem in late_items_60:
+
+        <% rentedItem = hmod.WardrobeItem.objects.get(id=RentedLineItem.wardrobe_item_ID.id) %>
+    <tr>
+        <td>${ rentedItem.id }</td>
+        <td>${ rentedItem.name }</td>
+        <td>${ rentedItem.size }</td>
+        <td>${ RentedLineItem.date_out }</td>
+        <td>${ RentedLineItem.date_due }</td>
+
+
+    </tr>
+    %endfor
+    <tr>
+        <td>Over 90 days late</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+
+    </tr>
+    %for RentedLineItem in late_items_90:
+
+        <% rentedItem = hmod.WardrobeItem.objects.get(id=RentedLineItem.wardrobe_item_ID.id) %>
+    <tr>
+        <td>${ rentedItem.id }</td>
+        <td>${ rentedItem.name }</td>
+        <td>${ rentedItem.size }</td>
+        <td>${ RentedLineItem.date_out }</td>
+        <td>${ RentedLineItem.date_due }</td>
+
+
+    </tr>
+    %endfor
+</table>
+</%block>
+</body>
+</html>

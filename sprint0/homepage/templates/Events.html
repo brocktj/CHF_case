@@ -1,0 +1,49 @@
+<%inherit file="Managerbase.htm" />
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<%block name="content">
+<a href="/homepage/Events.Create">New Event</a>
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Actions</th>
+    </tr>
+
+    %for Event in events:
+    <tr>
+        <td>${ Event.id }</td>
+        <td>${ Event.name }</td>
+        <td>${ Event.description }</td>
+        <td>${ Event.start_date }</td>
+        <td>${ Event.end_date }</td>
+        <td><a href="/homepage/Events.edit/${ Event.id }">Edit</a> | <a href="/homepage/Events.Delete/${ Event.id }">Delete</a> | <a href="/homepage/Events.view_details/${ Event.id }">Details</a>
+        </td>
+
+    </tr>
+    %endfor
+</table>
+</%block>
+<%block name="left">
+<div class="row">
+    <div id="left side" class="col-md-2">
+        <nav>
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="/homepage/Events/">Events</a></li>
+                <li><a href="">Areas</a></li>
+                <li><a href="">Volunteers</a></li>
+            </ul>
+        </nav>
+    </div>
+</%block>
+
+</body>
+</html>

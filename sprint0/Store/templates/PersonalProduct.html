@@ -1,0 +1,36 @@
+<%inherit file="base.htm" />
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<%block name="content">
+<a href="/Store/PersonalProduct.Create">Add item</a>
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Current Price</th>
+        <th>Instruction Form</th>
+        <th>Production time in days</th>
+        <th>Action</th>
+    </tr>
+    %for PersonalProduct in persProducts:
+    <tr>
+        <td>${ PersonalProduct.id }</td>
+        <td>${ PersonalProduct.name }</td>
+        <td>${ PersonalProduct.description }</td>
+        <td>${ PersonalProduct.current_price }</td>
+        <td>${ PersonalProduct.order_form_name }</td>
+        <td>${ PersonalProduct.production_time }</td>
+        <td> <a href="/Store/PersonalProduct.edit/${ PersonalProduct.id }">Edit</a> | <a href="/Store/PersonalProduct.Delete/${ PersonalProduct.id }">Delete</a>  </td>
+
+    </tr>
+    %endfor
+</table>
+</%block>
+</body>
+</html>

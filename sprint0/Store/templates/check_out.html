@@ -1,0 +1,59 @@
+<%inherit file="/homepage/templates/base.htm" />
+<%! import homepage.models as hmod %>
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+
+
+
+<%block name="content">
+<div>
+    your order total is $${ request.urlparams[0] }
+</div>
+<table>
+    <tr>
+        <td class="item_container"></td>
+        <td class="item_container"></td>
+    </tr>
+    <tr>
+        <td class="item_container">
+            Address Information
+            <div>
+                <form>
+                    <table>
+                        ${ form1 }
+
+                    </table>
+                </form>
+
+            </div>
+        </td>
+        <td class="item_container">
+            Credit Card Information
+            <div id="form_container" class="form_container">
+                <form id="checkout_form" method="POST" action="/Store/ShoppingCart.submit_form/${ request.urlparams[0] }">
+
+                    <table>
+                        ${ form }
+                    </table>
+                    %if user.is_authenticated:
+                    <button type="submit" class="submit_form">Submit Payment</button>
+                </form>
+            </div>
+        </td>
+    </tr>
+</table>
+%else:
+<div>Please <a href="#">Log in</a> to check out</div>
+%endif
+</%block>
+
+
+
+</body>
+</html>

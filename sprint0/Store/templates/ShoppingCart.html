@@ -1,0 +1,48 @@
+<%inherit file="/homepage/templates/base_ajax.htm" />
+<%! import homepage.models as hmod %>
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<%block name="content">
+<div>${ warnings or " " }</div>
+%for k in x:
+    <% item = hmod.BulkProduct.objects.get(id=k) %>
+    <% qty = x.get(k) %>
+
+<div>
+        <div>
+            ${ item.name }
+        </div>
+        <div>
+            ${ item.current_price }
+        </div>
+        <div>
+           ${ qty }
+        </div>
+    </div>
+%endfor
+
+%for i in y:
+    <% item = hmod.WardrobeItem.objects.get(id=i) %>
+
+<div>
+        <div>
+            ${ item.name }
+        </div>
+        <div>
+            ${ item.standard_rental_value }
+        </div>
+        <div>
+           1
+        </div>
+    </div>
+%endfor
+
+   ${ current_cart }
+</%block>
+</body>
+</html>

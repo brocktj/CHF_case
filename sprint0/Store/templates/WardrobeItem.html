@@ -1,0 +1,41 @@
+<%inherit file="Managerbase.htm" />
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<%block name="content">
+<a href="/Store/WardrobeItem.Create">Add Item</a>
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Size</th>
+        <th>Gender</th>
+        <th>Modifier</th>
+        <th>Pattern</th>
+        <th>Start Year</th>
+        <th>End Year</th>
+        <th>Actions</th>
+    </tr>
+
+    %for WardrobeItem in wdbItems:
+    <tr>
+        <td>${ WardrobeItem.id }</td>
+        <td>${ WardrobeItem.name }</td>
+        <td>${ WardrobeItem.size }</td>
+        <td>${ WardrobeItem.gender }</td>
+        <td>${ WardrobeItem.size_modifier }</td>
+        <td>${ WardrobeItem.pattern }</td>
+        <td>${ WardrobeItem.start_year }</td>
+        <td>${ WardrobeItem.end_year }</td>
+        <td> <a href="/Store/WardrobeItem.edit/${ WardrobeItem.id }">Edit</a> | <a href="/Store/WardrobeItem.Delete/${ WardrobeItem.id }">Delete</a>  </td>
+
+    </tr>
+    %endfor
+</table>
+</%block>
+</body>
+</html>

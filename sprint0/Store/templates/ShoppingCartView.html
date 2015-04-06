@@ -1,0 +1,77 @@
+<%inherit file="/homepage/templates/base.htm" />
+<%! import homepage.models as hmod %>
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<%block name="content">
+<table class="table table-striped">
+    <tr>
+        <td>item</td>
+        <td></td>
+        <td>quantity</td>
+        <td>price</td>
+
+
+    </tr>
+    <% total = 0 %>
+    %for k in x:
+    <tr>
+
+        <% item = hmod.BulkProduct.objects.get(id=k) %>
+        <% qty = x.get(k) %>
+
+        <td>
+            ${ item.name }
+        </td>
+        <td>
+            <a class="btn btn-warning" href="/Store/ShoppingCart.delete_item/${ item.id }">Remove</a>
+        </td>
+        <td>
+            ${ qty }
+        </td>
+        <td>
+            $${ item.current_price }
+
+        </td>
+        <% total += (int(qty) * item.current_price) %>
+    </tr>
+
+    %endfor
+%for i in y:
+    <% item = hmod.WardrobeItem.objects.get(id=i) %>
+
+<tr>
+        <td>
+            ${ item.name }
+        </td>
+        <td>
+            <a class="btn btn-warning" href="/Store/ShoppingCart.delete_rental_item/${ item.id }">Remove</a>
+        </td>
+        <td>
+            1
+        </td>
+        <td>
+           $${ item.standard_rental_value }
+        </td>
+    <% total += item.standard_rental_value %>
+    </tr>
+%endfor
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Total:</td>
+        <td>$${ total }</td>
+
+
+    </tr>
+
+</table>
+<div><a class="btn btn-success" href="/Store/ShoppingCart.check_out/${ total }">Checkout</a> </div>
+</%block>
+</body>
+</html>

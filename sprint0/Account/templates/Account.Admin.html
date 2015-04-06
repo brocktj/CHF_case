@@ -1,0 +1,51 @@
+<%inherit file="/homepage/templates/Adminbase.htm" />
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<%block name="content">
+<h1>Admin Page</h1>
+<p>Welcome ${ user.first_name } ${ user.last_name} </p>
+
+<table class="table table-striped">
+    <tr>
+        <td>
+            Username
+        </td>
+        <td>
+            ${ user.username }
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Name
+        </td>
+        <td>
+            ${ user.first_name } ${ user.last_name }
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Address
+        </td>
+        <td>
+            <p>${ user.address }</p>
+            <p>${ user.city }</p>
+            <p>${ user.state }</p>
+            <p>${ user.zip }</p>
+        </td>
+    </tr>
+
+
+</table>
+<div><a href="/Account/Account.update_password">Change Password</a></div>
+<div><a href="/Account/Account.edit_user_info" class="btn btn-success">Update your information</a></div>
+</%block>
+
+
+
+</body>
+</html>

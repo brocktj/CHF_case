@@ -1,0 +1,17 @@
+<%inherit file="/homepage/templates/base_ajax.htm" />
+<%block name="content">
+<form id="loginform" method="POST" action="/Account/login.loginform/">
+            <table>
+
+                ${ form }
+                <tr>
+                    <td>
+                        <input type="submit" class="btn btn-primary"></input>
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+</%block>
+
+

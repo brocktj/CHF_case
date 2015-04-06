@@ -1,0 +1,34 @@
+<%inherit file="/homepage/templates/base.htm" />
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<%block name="content">
+<a href="/Store/IndividualProduct.Create">Add item</a>
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Date Made</th>
+        <th>Current Price</th>
+        <th>Action</th>
+    </tr>
+    %for IndividualProduct in indProducts:
+    <tr>
+        <td>${ IndividualProduct.id }</td>
+        <td>${ IndividualProduct.name }</td>
+        <td>${ IndividualProduct.description }</td>
+        <td>${ IndividualProduct.date_made }</td>
+        <td>${ IndividualProduct.current_price }</td>
+        <td> <a href="/Store/IndividualProduct.edit/${ IndividualProduct.id }">Edit</a> | <a href="/Store/IndividualProduct.Delete/${ IndividualProduct.id }">Delete</a> </td>
+
+    </tr>
+    %endfor
+</table>
+</%block>
+</body>
+</html>

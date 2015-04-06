@@ -1,0 +1,12 @@
+<%inherit file="/homepage/templates/base_ajax.htm" />
+<%block name="content">
+<form id="checkout_form" method="POST" action="/Store/ShoppingCart.submit_form">
+    <table>
+        ${ form }
+
+    </table>
+    <button type="submit" class="submit_form">Submit Payment</button>
+</form>
+</%block>
+
+
