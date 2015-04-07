@@ -113,19 +113,16 @@ def loginform(request):
                 #print c to view how it it is set up
                 print('totes authenticated')
                 print(c)
-                u = hmod.User.objects.get_or_create(username=netid)
+                u = hmod.User.objects.get(username=netid)
+                print(u.first_name)
                 #now check djangos auth system for the user, and if they're there log them in
                 if u:
                     print('connection successful')
-                    #update user information to match the active directory information
-                    #u.first_name = 'info from active directory'
-                    #u.last_name = 'info from active directory'
-                    #u.email = 'email from active directory'
-                    #u.set_password('xxx')
-                    #u.save
-
                     user1 = authenticate(username=netid, password=password1)
+                    if user1.is_authenticated():
+                        print("authenticated")
                     login(request, user1)
+                    print("logged in")
                 #otherwise log the user in normally,
                 else:
                     user1 = authenticate(username=netid, password=password1)

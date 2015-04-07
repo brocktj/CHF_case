@@ -75,7 +75,7 @@ def Create(request):
     blkProduct.quantity_on_hand = 0
     blkProduct.save()
 
-    return HttpResponseRedirect('/homepage/BulkProduct.edit/{}/'.format(blkProduct.id))
+    return HttpResponseRedirect('/Store/BulkProduct.edit/{}/'.format(blkProduct.id))
 
 @view_function
 @permission_required('homepage.manager_rights', login_url='/homepage/login.unauthorized_access')
