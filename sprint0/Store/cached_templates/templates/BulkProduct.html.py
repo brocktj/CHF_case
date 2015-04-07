@@ -4,9 +4,9 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1428362640.278596
+_modified_time = 1428430039.108826
 _enable_loop = True
-_template_filename = 'C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\Store\\templates/BulkProduct.html'
+_template_filename = 'C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0\\Store\\templates/BulkProduct.html'
 _template_uri = 'BulkProduct.html'
 _source_encoding = 'ascii'
 import os, os.path, re
@@ -34,17 +34,17 @@ def render_body(context,**pageargs):
             return render_content(context._locals(__M_locals))
         blkProducts = context.get('blkProducts', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\n\n\n')
+        __M_writer('\r\n\r\n\r\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'left'):
             context['self'].left(**pageargs)
         
 
-        __M_writer('\n\n')
+        __M_writer('\r\n\r\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
             context['self'].content(**pageargs)
         
 
-        __M_writer('\n</html>')
+        __M_writer('\r\n</html>')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -56,7 +56,7 @@ def render_left(context,**pageargs):
         def left():
             return render_left(context)
         __M_writer = context.writer()
-        __M_writer('\n<div class="row">\n    <div id="left side" class="col-md-2">\n        <nav>\n            <ul class="nav nav-pills nav-stacked">\n                <li><a href="/Store/BulkProduct/">Bulk Products</a></li>\n                <li><a href="/Store/PersonalProduct/">Personal Products</a></li>\n                <li><a href="/Store/IndividualProduct/">Individual Products</a></li>\n            </ul>\n        </nav>\n    </div>\n')
+        __M_writer('\r\n<div class="row">\r\n    <div id="left side" class="col-md-2">\r\n        <nav>\r\n            <ul class="nav nav-pills nav-stacked">\r\n                <li><a href="/Store/BulkProduct/">Bulk Products</a></li>\r\n                <li><a href="/Store/PersonalProduct/">Personal Products</a></li>\r\n                <li><a href="/Store/IndividualProduct/">Individual Products</a></li>\r\n            </ul>\r\n        </nav>\r\n    </div>\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -69,24 +69,24 @@ def render_content(context,**pageargs):
             return render_content(context)
         blkProducts = context.get('blkProducts', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\n<body>\n<a href="/Store/BulkProduct.Create">Add item</a>\n<table class="table table-striped">\n    <tr>\n        <th>ID</th>\n        <th>Name</th>\n        <th>Description</th>\n        <th>Quantity on hand</th>\n        <th>Current Price</th>\n        <th>Actions</th>\n    </tr>\n')
+        __M_writer('\r\n<body>\r\n<a href="/Store/BulkProduct.Create">Add item</a>\r\n<table class="table table-striped">\r\n    <tr>\r\n        <th>ID</th>\r\n        <th>Name</th>\r\n        <th>Description</th>\r\n        <th>Quantity on hand</th>\r\n        <th>Current Price</th>\r\n        <th>Actions</th>\r\n    </tr>\r\n')
         for BulkProduct in blkProducts:
-            __M_writer('    <tr>\n        <td>')
+            __M_writer('    <tr>\r\n        <td>')
             __M_writer(str( BulkProduct.id ))
-            __M_writer('</td>\n        <td>')
+            __M_writer('</td>\r\n        <td>')
             __M_writer(str( BulkProduct.name ))
-            __M_writer('</td>\n        <td>')
+            __M_writer('</td>\r\n        <td>')
             __M_writer(str( BulkProduct.description ))
-            __M_writer('</td>\n        <td>')
+            __M_writer('</td>\r\n        <td>')
             __M_writer(str( BulkProduct.quantity_on_hand ))
-            __M_writer('</td>\n        <td>$')
+            __M_writer('</td>\r\n        <td>$')
             __M_writer(str( BulkProduct.current_price ))
-            __M_writer('</td>\n        <td> <a href="/Store/BulkProduct.edit/')
+            __M_writer('</td>\r\n        <td> <a href="/Store/BulkProduct.edit/')
             __M_writer(str( BulkProduct.id ))
             __M_writer('">Edit</a> | <a href="/Store/BulkProduct.Delete/')
             __M_writer(str( BulkProduct.id ))
-            __M_writer('">Delete</a>  </td>\n\n    </tr>\n')
-        __M_writer('</table>\n</body>\n')
+            __M_writer('">Delete</a>  </td>\r\n\r\n    </tr>\r\n')
+        __M_writer('</table>\r\n</body>\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -94,6 +94,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "ascii", "line_map": {"65": 17, "72": 17, "73": 29, "74": 30, "75": 31, "76": 31, "77": 32, "78": 32, "79": 33, "80": 33, "81": 34, "82": 34, "83": 35, "84": 35, "85": 36, "86": 36, "87": 36, "88": 36, "89": 40, "27": 0, "95": 89, "37": 1, "42": 15, "47": 42, "53": 4, "59": 4}, "filename": "C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\Store\\templates/BulkProduct.html", "uri": "BulkProduct.html"}
+{"uri": "BulkProduct.html", "filename": "C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0\\Store\\templates/BulkProduct.html", "line_map": {"65": 17, "72": 17, "73": 29, "74": 30, "75": 31, "76": 31, "77": 32, "78": 32, "79": 33, "80": 33, "81": 34, "82": 34, "83": 35, "84": 35, "85": 36, "86": 36, "87": 36, "88": 36, "89": 40, "27": 0, "95": 89, "37": 1, "42": 15, "47": 42, "53": 4, "59": 4}, "source_encoding": "ascii"}
 __M_END_METADATA
 """
