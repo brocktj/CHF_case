@@ -114,9 +114,9 @@ def loginform(request):
                 print('totes authenticated')
                 print(c)
                 u = hmod.User.objects.get(username=netid)
-                print(u.first_name)
+                print(u)
                 #now check djangos auth system for the user, and if they're there log them in
-                if u:
+                if u is not None:
                     print('connection successful')
                     user1 = authenticate(username=netid, password=password1)
                     if user1.is_authenticated():
@@ -165,8 +165,8 @@ class LoginForm(forms.Form):
     username = forms.CharField(max_length=100)
     password = forms.CharField(max_length=100, label='password', widget=forms.PasswordInput())
 
-    #def clean(self):
-       # user = authenticate(username=self.cleaned_data.get('username'), password=self.cleaned_data.get('password'))
-       # if user == None:
-      #      raise forms.ValidationError("Invalid username/password combination, please try again")
-       # return self.cleaned_data
+    def clean(self):
+        user = authenticate(username=self.cleaned_data.get('username'), password=self.cleaned_data.get('password'))
+        if user == None:
+            raise forms.ValidationError("Invalid username/password combination, please try again")
+        return self.cleaned_data
