@@ -4,9 +4,9 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1425714470.301393
+_modified_time = 1428360307.653175
 _enable_loop = True
-_template_filename = '/Users/brock/sprint0/Account/templates/SignUp.edit.html'
+_template_filename = 'C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\Account\\templates/SignUp.edit.html'
 _template_uri = 'SignUp.edit.html'
 _source_encoding = 'ascii'
 import os, os.path, re
@@ -28,11 +28,11 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        user = context.get('user', UNDEFINED)
         form = context.get('form', UNDEFINED)
         def content():
             return render_content(context._locals(__M_locals))
         request = context.get('request', UNDEFINED)
+        user = context.get('user', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n<!DOCTYPE html>\n<html>\n<head lang="en">\n    <meta charset="UTF-8">\n    <title></title>\n</head>\n<body>\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
@@ -48,11 +48,11 @@ def render_body(context,**pageargs):
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        user = context.get('user', UNDEFINED)
         form = context.get('form', UNDEFINED)
         def content():
             return render_content(context)
         request = context.get('request', UNDEFINED)
+        user = context.get('user', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n<div>\n    <h3>Please enter account information below:</h3>\n</div>\n<div id = "form_container">\n<form data-id="')
         __M_writer(str( user.id ))
@@ -68,6 +68,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"uri": "SignUp.edit.html", "line_map": {"27": 0, "37": 1, "42": 24, "48": 9, "69": 63, "57": 9, "58": 14, "59": 14, "60": 14, "61": 14, "62": 16, "63": 16}, "filename": "/Users/brock/sprint0/Account/templates/SignUp.edit.html", "source_encoding": "ascii"}
+{"uri": "SignUp.edit.html", "line_map": {"27": 0, "37": 1, "42": 24, "48": 9, "69": 63, "57": 9, "58": 14, "59": 14, "60": 14, "61": 14, "62": 16, "63": 16}, "source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\Account\\templates/SignUp.edit.html"}
 __M_END_METADATA
 """

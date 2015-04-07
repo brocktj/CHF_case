@@ -213,6 +213,7 @@ def send_overdue_email(items_list):
         email = hmod.RentedLineItem.transaction_ID.customer.email
         print(email)
         item = hmod.RentedLineItem.wardrobe_item_ID.name
+        print(item)
         due_date = hmod.RentedLineItem.date_due
         email_text = 'Your rental item: %s was due on %s\r ' \
                  'Please return the item to the colonial heritage ' \

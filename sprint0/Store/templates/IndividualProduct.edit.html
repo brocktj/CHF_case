@@ -1,11 +1,19 @@
-<%inherit file="/homepage/templates/Managerbase.htm" />
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<%inherit file="/homepage/templates/base.htm" />
+
+
+<%block name="left">
+<div class="row">
+    <div id="left side" class="col-md-2">
+        <nav>
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="/Store/BulkProduct/">Bulk Products</a></li>
+                <li><a href="/Store/PersonalProduct/">Personal Products</a></li>
+                <li><a href="/Store/IndividualProduct/">Individual Products</a></li>
+            </ul>
+        </nav>
+    </div>
+</%block>
+
 <%block name="content">
 
 

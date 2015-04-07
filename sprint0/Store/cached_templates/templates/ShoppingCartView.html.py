@@ -4,9 +4,9 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1428012463.335053
+_modified_time = 1428372993.557815
 _enable_loop = True
-_template_filename = '/Users/brock/sprint0/Store/templates/ShoppingCartView.html'
+_template_filename = 'C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\Store\\templates/ShoppingCartView.html'
 _template_uri = 'ShoppingCartView.html'
 _source_encoding = 'ascii'
 import os, os.path, re
@@ -30,10 +30,10 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
+        y = context.get('y', UNDEFINED)
+        int = context.get('int', UNDEFINED)
         def content():
             return render_content(context._locals(__M_locals))
-        int = context.get('int', UNDEFINED)
-        y = context.get('y', UNDEFINED)
         x = context.get('x', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
@@ -51,10 +51,10 @@ def render_body(context,**pageargs):
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        y = context.get('y', UNDEFINED)
+        int = context.get('int', UNDEFINED)
         def content():
             return render_content(context)
-        int = context.get('int', UNDEFINED)
-        y = context.get('y', UNDEFINED)
         x = context.get('x', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n<table class="table table-striped">\n    <tr>\n        <td>item</td>\n        <td></td>\n        <td>quantity</td>\n        <td>price</td>\n\n\n    </tr>\n    ')
@@ -106,6 +106,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "/Users/brock/sprint0/Store/templates/ShoppingCartView.html", "line_map": {"64": 22, "65": 23, "66": 25, "68": 25, "69": 26, "71": 26, "72": 29, "73": 29, "74": 32, "75": 32, "76": 35, "77": 35, "78": 38, "79": 38, "16": 2, "82": 41, "83": 45, "84": 46, "85": 46, "87": 46, "88": 50, "89": 50, "90": 53, "91": 53, "92": 59, "29": 0, "94": 61, "96": 61, "80": 41, "98": 68, "99": 68, "100": 74, "101": 74, "39": 1, "40": 2, "97": 64, "107": 101, "45": 75, "93": 59, "51": 11, "60": 11, "61": 21, "63": 21}, "source_encoding": "ascii", "uri": "ShoppingCartView.html"}
+{"source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\Store\\templates/ShoppingCartView.html", "uri": "ShoppingCartView.html", "line_map": {"64": 22, "65": 23, "66": 25, "68": 25, "69": 26, "71": 26, "72": 29, "73": 29, "74": 32, "75": 32, "76": 35, "77": 35, "78": 38, "79": 38, "16": 2, "82": 41, "83": 45, "84": 46, "85": 46, "87": 46, "88": 50, "89": 50, "90": 53, "91": 53, "92": 59, "29": 0, "94": 61, "96": 61, "80": 41, "98": 68, "99": 68, "100": 74, "101": 74, "39": 1, "40": 2, "97": 64, "107": 101, "45": 75, "93": 59, "51": 11, "60": 11, "61": 21, "63": 21}}
 __M_END_METADATA
 """

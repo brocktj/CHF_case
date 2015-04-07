@@ -4,9 +4,9 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1425783859.222804
+_modified_time = 1428357216.993311
 _enable_loop = True
-_template_filename = '/Users/brock/sprint0/Account/templates/Account.Admin.html'
+_template_filename = 'C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\Account\\templates/Account.Admin.html'
 _template_uri = 'Account.Admin.html'
 _source_encoding = 'ascii'
 import os, os.path, re
@@ -28,9 +28,9 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        user = context.get('user', UNDEFINED)
         def content():
             return render_content(context._locals(__M_locals))
+        user = context.get('user', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n<!DOCTYPE html>\n<html>\n<head lang="en">\n    <meta charset="UTF-8">\n    <title></title>\n</head>\n<body>\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
@@ -46,9 +46,9 @@ def render_body(context,**pageargs):
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        user = context.get('user', UNDEFINED)
         def content():
             return render_content(context)
+        user = context.get('user', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n<h1>Admin Page</h1>\n<p>Welcome ')
         __M_writer(str( user.first_name ))
@@ -76,6 +76,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"line_map": {"64": 35, "65": 35, "66": 36, "67": 36, "68": 37, "69": 37, "70": 38, "71": 38, "77": 71, "27": 0, "35": 1, "40": 46, "46": 9, "53": 9, "54": 11, "55": 11, "56": 11, "57": 11, "58": 19, "59": 19, "60": 27, "61": 27, "62": 27, "63": 27}, "filename": "/Users/brock/sprint0/Account/templates/Account.Admin.html", "uri": "Account.Admin.html", "source_encoding": "ascii"}
+{"uri": "Account.Admin.html", "line_map": {"64": 35, "65": 35, "66": 36, "67": 36, "68": 37, "69": 37, "70": 38, "71": 38, "77": 71, "27": 0, "35": 1, "40": 46, "46": 9, "53": 9, "54": 11, "55": 11, "56": 11, "57": 11, "58": 19, "59": 19, "60": 27, "61": 27, "62": 27, "63": 27}, "source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\Account\\templates/Account.Admin.html"}
 __M_END_METADATA
 """

@@ -4,13 +4,13 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1424806079.816533
+_modified_time = 1428359169.932504
 _enable_loop = True
-_template_filename = '/Users/brock/sprint0/Store/templates/Store.html'
+_template_filename = 'C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\Store\\templates/Store.html'
 _template_uri = 'Store.html'
 _source_encoding = 'ascii'
 import os, os.path, re
-_exports = ['left', 'content']
+_exports = ['content', 'left']
 
 
 def _mako_get_namespace(context, name):
@@ -28,10 +28,10 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        def left():
-            return render_left(context._locals(__M_locals))
         def content():
             return render_content(context._locals(__M_locals))
+        def left():
+            return render_left(context._locals(__M_locals))
         __M_writer = context.writer()
         __M_writer('\n\n<!DOCTYPE html>\n<html>\n<head lang="en">\n    <meta charset="UTF-8">\n    <title></title>\n</head>\n<body>\n\n\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
@@ -49,18 +49,6 @@ def render_body(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
-def render_left(context,**pageargs):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        def left():
-            return render_left(context)
-        __M_writer = context.writer()
-        __M_writer('\n<div class="row">\n    <div id="left side" class="col-md-2">\n        <nav>\n            <ul class="nav nav-pills nav-stacked">\n                <li><a href="/Store/PersonalProduct/">Personal Products</a></li>\n                <li><a href="/Store/BulkProduct/">Bulk Products</a></li>\n                <li><a href="/Store/IndividualProduct/">Custom Products</a></li>\n                <li><a href="/Store/WardrobeItem">Wardrobe Items</a></li>\n                <li><a href="">Other Rental Items</a></li>\n            </ul>\n        </nav>\n    </div>\n')
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
@@ -73,8 +61,20 @@ def render_content(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
+def render_left(context,**pageargs):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        def left():
+            return render_left(context)
+        __M_writer = context.writer()
+        __M_writer('\n<div class="row">\n    <div id="left side" class="col-md-2">\n        <nav>\n            <ul class="nav nav-pills nav-stacked">\n                <li><a href="/Store/PersonalProduct/">Personal Products</a></li>\n                <li><a href="/Store/BulkProduct/">Bulk Products</a></li>\n                <li><a href="/Store/IndividualProduct/">Custom Products</a></li>\n                <li><a href="/Store/WardrobeItem">Wardrobe Items</a></li>\n                <li><a href="">Other Rental Items</a></li>\n            </ul>\n        </nav>\n    </div>\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
 """
 __M_BEGIN_METADATA
-{"uri": "Store.html", "filename": "/Users/brock/sprint0/Store/templates/Store.html", "line_map": {"64": 12, "36": 1, "70": 12, "41": 18, "58": 19, "27": 0, "76": 70, "46": 32, "52": 19}, "source_encoding": "ascii"}
+{"uri": "Store.html", "line_map": {"64": 19, "36": 1, "70": 19, "41": 18, "58": 12, "27": 0, "76": 70, "46": 32, "52": 12}, "source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\Store\\templates/Store.html"}
 __M_END_METADATA
 """

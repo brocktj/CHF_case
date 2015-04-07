@@ -4,9 +4,9 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1428117110.724426
+_modified_time = 1428376342.975955
 _enable_loop = True
-_template_filename = '/Users/brock/sprint0/homepage/templates/EventDetails.html'
+_template_filename = 'C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\homepage\\templates/EventDetails.html'
 _template_uri = 'EventDetails.html'
 _source_encoding = 'ascii'
 import os, os.path, re
@@ -30,10 +30,10 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        event = context.get('event', UNDEFINED)
         def left():
             return render_left(context._locals(__M_locals))
         areas = context.get('areas', UNDEFINED)
+        event = context.get('event', UNDEFINED)
         def content():
             return render_content(context._locals(__M_locals))
         __M_writer = context.writer()
@@ -60,7 +60,7 @@ def render_left(context,**pageargs):
         def left():
             return render_left(context)
         __M_writer = context.writer()
-        __M_writer('\n<div class="row">\n    <div id="left side" class="col-md-2">\n        <nav>\n            <ul class="nav nav-pills nav-stacked">\n                <li><a href="/homepage/Events/">Events</a></li>\n                <li><a href="">Areas</a></li>\n                <li><a href="">Volunteers</a></li>\n            </ul>\n        </nav>\n    </div>\n')
+        __M_writer('\n<div class="row">\n    <div id="left side" class="col-md-2">\n        <nav>\n            <ul class="nav nav-pills nav-stacked">\n                <li><a href="/homepage/Events/">Events</a></li>\n\n            </ul>\n        </nav>\n    </div>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -69,8 +69,8 @@ def render_left(context,**pageargs):
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        event = context.get('event', UNDEFINED)
         areas = context.get('areas', UNDEFINED)
+        event = context.get('event', UNDEFINED)
         def content():
             return render_content(context)
         __M_writer = context.writer()
@@ -114,6 +114,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "/Users/brock/sprint0/homepage/templates/EventDetails.html", "line_map": {"115": 109, "69": 10, "97": 45, "77": 10, "78": 19, "79": 19, "80": 21, "81": 21, "82": 22, "83": 22, "84": 22, "85": 22, "86": 28, "87": 29, "88": 29, "90": 29, "91": 32, "92": 32, "29": 0, "94": 44, "95": 45, "96": 45, "16": 2, "98": 45, "99": 46, "100": 46, "101": 59, "102": 60, "103": 61, "40": 1, "41": 2, "106": 62, "107": 63, "108": 63, "109": 67, "46": 71, "93": 44, "104": 61, "51": 83, "105": 62, "57": 72, "63": 72}, "source_encoding": "ascii", "uri": "EventDetails.html"}
+{"source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\homepage\\templates/EventDetails.html", "uri": "EventDetails.html", "line_map": {"115": 109, "69": 10, "97": 45, "77": 10, "78": 19, "79": 19, "80": 21, "81": 21, "82": 22, "83": 22, "84": 22, "85": 22, "86": 28, "87": 29, "88": 29, "90": 29, "91": 32, "92": 32, "29": 0, "94": 44, "95": 45, "96": 45, "16": 2, "98": 45, "99": 46, "100": 46, "101": 59, "102": 60, "103": 61, "40": 1, "41": 2, "106": 62, "107": 63, "108": 63, "109": 67, "46": 71, "93": 44, "104": 61, "51": 82, "105": 62, "57": 72, "63": 72}}
 __M_END_METADATA
 """

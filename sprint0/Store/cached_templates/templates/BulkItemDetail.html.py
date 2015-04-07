@@ -4,9 +4,9 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1425723583.264465
+_modified_time = 1428372878.968259
 _enable_loop = True
-_template_filename = '/Users/brock/sprint0/Store/templates/BulkItemDetail.html'
+_template_filename = 'C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\Store\\templates/BulkItemDetail.html'
 _template_uri = 'BulkItemDetail.html'
 _source_encoding = 'ascii'
 import os, os.path, re
@@ -28,24 +28,24 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        settings = context.get('settings', UNDEFINED)
-        blkProduct = context.get('blkProduct', UNDEFINED)
         def left():
             return render_left(context._locals(__M_locals))
         def content():
             return render_content(context._locals(__M_locals))
+        blkProduct = context.get('blkProduct', UNDEFINED)
+        settings = context.get('settings', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\n\n<!DOCTYPE html>\n<html>\n<head lang="en">\n    <meta charset="UTF-8">\n    <title></title>\n</head>\n<body>\n\n\n')
-        if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
-            context['self'].content(**pageargs)
-        
-
-        __M_writer('\n')
+        __M_writer('\n\n\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'left'):
             context['self'].left(**pageargs)
         
 
-        __M_writer('\n</body>\n</html>')
+        __M_writer('\n\n')
+        if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
+            context['self'].content(**pageargs)
+        
+
+        __M_writer('\n\n</body>\n</html>')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -57,7 +57,7 @@ def render_left(context,**pageargs):
         def left():
             return render_left(context)
         __M_writer = context.writer()
-        __M_writer('\n<div class="row">\n    <div id="left side" class="col-md-2">\n        <nav>\n            <ul class="nav nav-pills nav-stacked">\n                <li><a href="/Store/PersonalProduct/">Personal Products</a></li>\n                <li><a href="/Store/BulkProduct/">Bulk Products</a></li>\n                <li><a href="/Store/IndividualProduct/">Custom Products</a></li>\n                <li><a href="/Store/WardrobeItem">Wardrobe Items</a></li>\n                <li><a href="">Other Rental Items</a></li>\n            </ul>\n        </nav>\n    </div>\n')
+        __M_writer('\n<div class="row">\n    <div id="left side" class="col-md-2">\n        <nav>\n            <ul class="nav nav-pills nav-stacked">\n                <li><a href="/Store/BulkProduct/">Bulk Products</a></li>\n                <li><a href="/Store/PersonalProduct/">Personal Products</a></li>\n                <li><a href="/Store/IndividualProduct/">Individual Products</a></li>\n                <li><a href="/Store/WardrobeItem/">Wardrobe Item</a></li>\n            </ul>\n        </nav>\n    </div>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -66,10 +66,10 @@ def render_left(context,**pageargs):
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        settings = context.get('settings', UNDEFINED)
-        blkProduct = context.get('blkProduct', UNDEFINED)
         def content():
             return render_content(context)
+        blkProduct = context.get('blkProduct', UNDEFINED)
+        settings = context.get('settings', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n    <div>\n     <img src="')
         __M_writer(str( settings.STATIC_URL))
@@ -95,6 +95,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"uri": "BulkItemDetail.html", "filename": "/Users/brock/sprint0/Store/templates/BulkItemDetail.html", "line_map": {"66": 12, "74": 12, "75": 14, "76": 14, "77": 14, "78": 14, "79": 16, "80": 16, "81": 19, "82": 19, "83": 21, "84": 21, "85": 23, "86": 23, "87": 25, "88": 25, "89": 25, "90": 25, "27": 0, "96": 90, "38": 1, "43": 28, "48": 42, "54": 29, "60": 29}, "source_encoding": "ascii"}
+{"source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\Store\\templates/BulkItemDetail.html", "uri": "BulkItemDetail.html", "line_map": {"66": 18, "74": 18, "75": 20, "76": 20, "77": 20, "78": 20, "79": 22, "80": 22, "81": 25, "82": 25, "83": 27, "84": 27, "85": 29, "86": 29, "87": 31, "88": 31, "89": 31, "90": 31, "27": 0, "96": 90, "38": 1, "43": 16, "48": 34, "54": 4, "60": 4}}
 __M_END_METADATA
 """
