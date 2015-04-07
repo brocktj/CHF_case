@@ -4,9 +4,9 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1428376042.355526
+_modified_time = 1428430582.737925
 _enable_loop = True
-_template_filename = 'C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\homepage\\templates/Events.edit.html'
+_template_filename = 'C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0\\homepage\\templates/Events.edit.html'
 _template_uri = 'Events.edit.html'
 _source_encoding = 'ascii'
 import os, os.path, re
@@ -23,7 +23,7 @@ def _mako_generate_namespaces(context):
     pass
 def _mako_inherit(template, context):
     _mako_generate_namespaces(context)
-    return runtime._inherit_from(context, 'Managerbase.htm', _template_uri)
+    return runtime._inherit_from(context, 'base.htm', _template_uri)
 def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
@@ -34,17 +34,17 @@ def render_body(context,**pageargs):
         def content():
             return render_content(context._locals(__M_locals))
         __M_writer = context.writer()
-        __M_writer('\n<!DOCTYPE html>\n<html>\n<head lang="en">\n    <meta charset="UTF-8">\n    <title></title>\n</head>\n\n')
+        __M_writer('\r\n<!DOCTYPE html>\r\n<html>\r\n<head lang="en">\r\n    <meta charset="UTF-8">\r\n    <title></title>\r\n</head>\r\n\r\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'left'):
             context['self'].left(**pageargs)
         
 
-        __M_writer('\n\n')
+        __M_writer('\r\n\r\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
             context['self'].content(**pageargs)
         
 
-        __M_writer('\n</body>\n</html>')
+        __M_writer('\r\n</body>\r\n</html>')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -56,7 +56,7 @@ def render_left(context,**pageargs):
         def left():
             return render_left(context)
         __M_writer = context.writer()
-        __M_writer('\n<div class="row">\n    <div id="left side" class="col-md-2">\n        <nav>\n            <ul class="nav nav-pills nav-stacked">\n                <li><a href="/homepage/Events/">Events</a></li>\n\n            </ul>\n        </nav>\n    </div>\n')
+        __M_writer('\r\n<div class="row">\r\n    <div id="left side" class="col-md-2">\r\n        <nav>\r\n            <ul class="nav nav-pills nav-stacked">\r\n                <li><a href="/homepage/Events/">Events</a></li>\r\n\r\n            </ul>\r\n        </nav>\r\n    </div>\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -69,9 +69,9 @@ def render_content(context,**pageargs):
         def content():
             return render_content(context)
         __M_writer = context.writer()
-        __M_writer('\n<body>\n<table>\n<form method="POST">\n    ')
+        __M_writer('\r\n<body>\r\n<table>\r\n<form method="POST">\r\n    ')
         __M_writer(str( form ))
-        __M_writer('\n    <tr><td><button type="submit" class="btn btn-primary">Submit</button></td></tr>\n\n</form>\n    </table>\n')
+        __M_writer('\r\n    <tr><td><button type="submit" class="btn btn-primary">Submit</button></td></tr>\r\n\r\n</form>\r\n    </table>\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -79,6 +79,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\homepage\\templates/Events.edit.html", "uri": "Events.edit.html", "line_map": {"80": 74, "65": 21, "59": 9, "53": 9, "73": 25, "72": 21, "47": 30, "42": 19, "27": 0, "74": 25, "37": 1}}
+{"filename": "C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0\\homepage\\templates/Events.edit.html", "uri": "Events.edit.html", "source_encoding": "ascii", "line_map": {"80": 74, "65": 21, "59": 9, "53": 9, "73": 25, "72": 21, "47": 30, "42": 19, "27": 0, "74": 25, "37": 1}}
 __M_END_METADATA
 """
