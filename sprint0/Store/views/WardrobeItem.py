@@ -196,7 +196,6 @@ def get_late_items(request):
     results = get_late_lists()
     print("got the late items!")
 
-
     params["late_items_30"] = results['30']
     params["late_items_60"] = results['60']
     params["late_items_90"] = results['90']
@@ -215,12 +214,12 @@ def send_overdue_email(items_list):
         print(email)
         item = hmod.RentedLineItem.wardrobe_item_ID.name
         due_date = hmod.RentedLineItem.date_due
-    email_text = 'Your rental item: %s was due on %s\r ' \
+        email_text = 'Your rental item: %s was due on %s\r ' \
                  'Please return the item to the colonial heritage ' \
                  'foundation to avoid incurring more charges' % (item, due_date)
-    send_mail('Your overdue rental', email_text,
+        send_mail('Your overdue rental', email_text,
               'brock@chfoundation.us', [email], fail_silently=True)
-    print("method success!!!")
+        print("method success!!!")
 
 def get_late_lists():
     now1 = datetime.datetime.now()
