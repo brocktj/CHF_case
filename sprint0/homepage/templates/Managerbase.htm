@@ -53,16 +53,20 @@
                 <li><a href="/homepage/Users/">Account</a></li>
                 <li><a href="/Store/StoreView/">Store</a></li>
                 <li><a href="/homepage/Events/">Events</a></li>
+
+                %if request.user.groups.filter(name='AdminGroup').exists():
                 <li><a href="/Store/WardrobeItem.get_late_items/" id="generate_report">Late Items</a></li>
+                %else:
+
+                %endif
+
                 <li><a href ="/Account/logout">Logout</a></li>
                 <li><a>Welcome: ${ request.user.username }</a></li>
 
                 %else:
                 <li><a id="show_modal" href="#" class="text-right">Login</a></li>
 
-
                 %endif
-                
 
             </ul>
         </div>
