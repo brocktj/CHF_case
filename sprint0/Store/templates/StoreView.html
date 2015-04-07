@@ -1,10 +1,19 @@
 <%inherit file="/homepage/templates/base.htm" />
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
+
+
+<%block name="left">
+<div class="row">
+    <div id="left side" class="col-md-2">
+        <nav>
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="/Store/BulkProduct/">Bulk Products</a></li>
+                <li><a href="/Store/PersonalProduct/">Personal Products</a></li>
+                <li><a href="/Store/IndividualProduct/">Individual Products</a></li>
+            </ul>
+        </nav>
+    </div>
+</%block>
+
 <%block name="content">
 <body>
 <form id="live-search" action="" class="styled" method="post">
@@ -14,6 +23,7 @@
     </fieldset>
 </form>
 <a href="/Store/ShoppingCart.delete_cart">Delete the cart</a>
+<a class="btn btn-success" href="/Store/ShoppingCart.view_cart/">View Cart</a>
 <div>
     <h2>Products</h2>
 <table class="table">

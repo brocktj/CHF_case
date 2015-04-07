@@ -4,9 +4,9 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1425668078.811466
+_modified_time = 1428362992.388615
 _enable_loop = True
-_template_filename = '/Users/brock/sprint0/homepage/templates/base_ajax.htm'
+_template_filename = 'C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0/homepage/templates/base_ajax.htm'
 _template_uri = '/homepage/templates/base_ajax.htm'
 _source_encoding = 'ascii'
 import os, os.path, re
@@ -19,10 +19,10 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
+        request = context.get('request', UNDEFINED)
         def content():
             return render_content(context._locals(__M_locals))
         self = context.get('self', UNDEFINED)
-        request = context.get('request', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n')
@@ -59,6 +59,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "ascii", "filename": "/Users/brock/sprint0/homepage/templates/base_ajax.htm", "uri": "/homepage/templates/base_ajax.htm", "line_map": {"33": 7, "34": 10, "35": 10, "48": 13, "40": 15, "41": 18, "42": 18, "60": 54, "16": 6, "18": 0, "54": 13, "27": 4, "28": 6, "29": 7}}
+{"uri": "/homepage/templates/base_ajax.htm", "line_map": {"33": 7, "34": 10, "35": 10, "48": 13, "40": 15, "41": 18, "42": 18, "60": 54, "16": 6, "18": 0, "54": 13, "27": 4, "28": 6, "29": 7}, "filename": "C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0/homepage/templates/base_ajax.htm", "source_encoding": "ascii"}
 __M_END_METADATA
 """

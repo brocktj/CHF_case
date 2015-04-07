@@ -4,9 +4,9 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1428023881.155611
+_modified_time = 1428373008.098203
 _enable_loop = True
-_template_filename = '/Users/brock/sprint0/Store/templates/check_out.html'
+_template_filename = 'C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\Store\\templates/check_out.html'
 _template_uri = 'check_out.html'
 _source_encoding = 'ascii'
 import os, os.path, re
@@ -30,12 +30,12 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        request = context.get('request', UNDEFINED)
         form = context.get('form', UNDEFINED)
-        form1 = context.get('form1', UNDEFINED)
-        user = context.get('user', UNDEFINED)
+        request = context.get('request', UNDEFINED)
         def content():
             return render_content(context._locals(__M_locals))
+        user = context.get('user', UNDEFINED)
+        form1 = context.get('form1', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n<!DOCTYPE html>\n<html>\n<head lang="en">\n    <meta charset="UTF-8">\n    <title></title>\n</head>\n<body>\n\n\n\n\n')
@@ -52,12 +52,12 @@ def render_body(context,**pageargs):
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        request = context.get('request', UNDEFINED)
         form = context.get('form', UNDEFINED)
-        form1 = context.get('form1', UNDEFINED)
-        user = context.get('user', UNDEFINED)
+        request = context.get('request', UNDEFINED)
         def content():
             return render_content(context)
+        user = context.get('user', UNDEFINED)
+        form1 = context.get('form1', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n<div>\n    your order total is $')
         __M_writer(str( request.urlparams[0] ))
@@ -79,6 +79,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"uri": "check_out.html", "filename": "/Users/brock/sprint0/Store/templates/check_out.html", "line_map": {"64": 16, "65": 29, "66": 29, "67": 39, "68": 39, "69": 42, "70": 42, "71": 44, "40": 1, "41": 2, "74": 52, "46": 54, "16": 2, "72": 45, "52": 14, "80": 74, "73": 51, "29": 0, "62": 14, "63": 16}, "source_encoding": "ascii"}
+{"source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\Store\\templates/check_out.html", "uri": "check_out.html", "line_map": {"64": 16, "65": 29, "66": 29, "67": 39, "68": 39, "69": 42, "70": 42, "71": 44, "40": 1, "41": 2, "74": 52, "46": 54, "16": 2, "72": 45, "52": 14, "80": 74, "73": 51, "29": 0, "62": 14, "63": 16}}
 __M_END_METADATA
 """

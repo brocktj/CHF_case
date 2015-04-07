@@ -28,15 +28,58 @@
 
 <body>
 <%block name ="header">
-<div class="page-header">
-    <h1>The Colonial Heritage Foundation <small>preserving history</small></h1>
-    <p><a href="/Account/logout/">Logout</a></p>
-    <button id="show_modal">Log in</button>
-    <button id="generate_report">Late Items</button>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/homepage">Colonial Heritage Foundation <small>preserving history</small></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+
+
+                % if request.user.username != '':
+                <li><a href="/homepage/Users/">Account</a></li>
+                <li><a href="/Store/StoreView/">Store</a></li>
+                <li><a href="/homepage/Events/">Events</a></li>
+                <li><a href="/Store/WardrobeItem.get_late_items/" id="generate_report">Late Items</a></li>
+                <li><a href ="/Account/logout">Logout</a></li>
+                <li><a>Welcome: ${ request.user.username }</a></li>
+
+                %else:
+                <li><a id="show_modal" href="#" class="text-right">Login</a></li>
+
+                %endif
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="btn-group">
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+        Action <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" role="menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li>
+        <li><a href="#">Something else here</a></li>
+        <li class="divider"></li>
+
+        <li><a href="#">Separated link</a></li>
+    </ul>
 </div>
 </%block>
 
-</div>
+<br>
+<br>
 
 <%block name="left">
 <div class="row">
@@ -44,8 +87,8 @@
         <nav>
             <ul class="nav nav-pills nav-stacked">
                 <li><a href="/homepage/Events/">Events</a></li>
-                <li><a href="/homepage/Users//">Users</a></li>
-                <li><a href="/Store/Store/">Store Items</a></li>
+                <li><a href="/homepage/Users//">User Accounts</a></li>
+                <li><a href="/Store/StoreView/">Store</a></li>
             </ul>
         </nav>
     </div>
@@ -59,9 +102,7 @@
     </%block>
 </div>
 <%block name="footer">
-<div class ="jimbob">
-<p><a href="http://localhost:8000/homepage/terms/">terms and conditions</a> </p>
-</div>
+
 </%block>
 
 <div class="modal fade" id="login_dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

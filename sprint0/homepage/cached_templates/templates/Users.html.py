@@ -4,13 +4,13 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1425715546.975716
+_modified_time = 1428372466.485672
 _enable_loop = True
-_template_filename = '/Users/brock/sprint0/homepage/templates/Users.html'
+_template_filename = 'C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\homepage\\templates/Users.html'
 _template_uri = 'Users.html'
 _source_encoding = 'ascii'
 import os, os.path, re
-_exports = ['content', 'left']
+_exports = ['left', 'content']
 
 
 def _mako_get_namespace(context, name):
@@ -28,10 +28,10 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        def content():
-            return render_content(context._locals(__M_locals))
         def left():
             return render_left(context._locals(__M_locals))
+        def content():
+            return render_content(context._locals(__M_locals))
         users = context.get('users', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n<!DOCTYPE html>\n<html>\n<head lang="en">\n    <meta charset="UTF-8">\n    <title></title>\n</head>\n<body>\n')
@@ -45,6 +45,18 @@ def render_body(context,**pageargs):
         
 
         __M_writer('\n\n\n\n</body>\n</html>')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
+def render_left(context,**pageargs):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        def left():
+            return render_left(context)
+        __M_writer = context.writer()
+        __M_writer('\n<div class="row">\n    <div id="left side" class="col-md-2">\n        <nav>\n            <ul class="nav nav-pills nav-stacked">\n                <li><a href="/homepage/Users/">View All Users</a></li>\n\n\n            </ul>\n        </nav>\n    </div>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -80,20 +92,8 @@ def render_content(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
-def render_left(context,**pageargs):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        def left():
-            return render_left(context)
-        __M_writer = context.writer()
-        __M_writer('\n<div class="row">\n    <div id="left side" class="col-md-2">\n        <nav>\n            <ul class="nav nav-pills nav-stacked">\n                <li><a href="/homepage/Users/">View All Users</a></li>\n                <li><a href="">View Administrators</a></li>\n                <li><a href="">View Managers</a></li>\n\n            </ul>\n        </nav>\n    </div>\n')
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
 """
 __M_BEGIN_METADATA
-{"filename": "/Users/brock/sprint0/homepage/templates/Users.html", "line_map": {"64": 22, "65": 23, "66": 23, "67": 24, "68": 24, "69": 25, "70": 25, "71": 26, "72": 26, "73": 26, "74": 26, "75": 26, "76": 26, "77": 29, "83": 31, "89": 31, "27": 0, "95": 89, "37": 1, "42": 30, "47": 43, "53": 9, "60": 9, "61": 20, "62": 21, "63": 22}, "source_encoding": "ascii", "uri": "Users.html"}
+{"source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\homepage\\templates/Users.html", "uri": "Users.html", "line_map": {"65": 9, "72": 9, "73": 20, "74": 21, "75": 22, "76": 22, "77": 23, "78": 23, "79": 24, "80": 24, "81": 25, "82": 25, "83": 26, "84": 26, "85": 26, "86": 26, "87": 26, "88": 26, "89": 29, "27": 0, "95": 89, "37": 1, "42": 30, "47": 42, "53": 31, "59": 31}}
 __M_END_METADATA
 """

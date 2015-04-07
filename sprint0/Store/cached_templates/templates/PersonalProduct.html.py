@@ -4,13 +4,13 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1424806210.090709
+_modified_time = 1428362642.20815
 _enable_loop = True
-_template_filename = '/Users/brock/sprint0/Store/templates/PersonalProduct.html'
+_template_filename = 'C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\Store\\templates/PersonalProduct.html'
 _template_uri = 'PersonalProduct.html'
 _source_encoding = 'ascii'
 import os, os.path, re
-_exports = ['content']
+_exports = ['left', 'content']
 
 
 def _mako_get_namespace(context, name):
@@ -23,16 +23,23 @@ def _mako_generate_namespaces(context):
     pass
 def _mako_inherit(template, context):
     _mako_generate_namespaces(context)
-    return runtime._inherit_from(context, 'base.htm', _template_uri)
+    return runtime._inherit_from(context, '/homepage/templates/base.htm', _template_uri)
 def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        persProducts = context.get('persProducts', UNDEFINED)
+        def left():
+            return render_left(context._locals(__M_locals))
         def content():
             return render_content(context._locals(__M_locals))
+        persProducts = context.get('persProducts', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\n<!DOCTYPE html>\n<html>\n<head lang="en">\n    <meta charset="UTF-8">\n    <title></title>\n</head>\n<body>\n')
+        __M_writer('\n\n\n')
+        if 'parent' not in context._data or not hasattr(context._data['parent'], 'left'):
+            context['self'].left(**pageargs)
+        
+
+        __M_writer('\n\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
             context['self'].content(**pageargs)
         
@@ -43,12 +50,24 @@ def render_body(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
+def render_left(context,**pageargs):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        def left():
+            return render_left(context)
+        __M_writer = context.writer()
+        __M_writer('\n<div class="row">\n    <div id="left side" class="col-md-2">\n        <nav>\n            <ul class="nav nav-pills nav-stacked">\n                <li><a href="/Store/BulkProduct/">Bulk Products</a></li>\n                <li><a href="/Store/PersonalProduct/">Personal Products</a></li>\n                <li><a href="/Store/IndividualProduct/">Individual Products</a></li>\n            </ul>\n        </nav>\n    </div>\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        persProducts = context.get('persProducts', UNDEFINED)
         def content():
             return render_content(context)
+        persProducts = context.get('persProducts', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n<a href="/Store/PersonalProduct.Create">Add item</a>\n<table class="table table-striped">\n    <tr>\n        <th>ID</th>\n        <th>Name</th>\n        <th>Description</th>\n        <th>Current Price</th>\n        <th>Instruction Form</th>\n        <th>Production time in days</th>\n        <th>Action</th>\n    </tr>\n')
         for PersonalProduct in persProducts:
@@ -77,6 +96,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"uri": "PersonalProduct.html", "filename": "/Users/brock/sprint0/Store/templates/PersonalProduct.html", "line_map": {"64": 27, "65": 27, "66": 28, "67": 28, "68": 29, "69": 29, "70": 29, "71": 29, "72": 33, "78": 72, "27": 0, "35": 1, "40": 34, "46": 9, "53": 9, "54": 21, "55": 22, "56": 23, "57": 23, "58": 24, "59": 24, "60": 25, "61": 25, "62": 26, "63": 26}, "source_encoding": "ascii"}
+{"source_encoding": "ascii", "line_map": {"65": 17, "72": 17, "73": 29, "74": 30, "75": 31, "76": 31, "77": 32, "78": 32, "79": 33, "80": 33, "81": 34, "82": 34, "83": 35, "84": 35, "85": 36, "86": 36, "87": 37, "88": 37, "89": 37, "90": 37, "27": 0, "97": 91, "91": 41, "37": 1, "42": 15, "47": 42, "53": 4, "59": 4}, "filename": "C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\Store\\templates/PersonalProduct.html", "uri": "PersonalProduct.html"}
 __M_END_METADATA
 """

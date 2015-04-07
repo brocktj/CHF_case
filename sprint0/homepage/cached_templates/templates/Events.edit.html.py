@@ -4,13 +4,13 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1427812435.507089
+_modified_time = 1428376042.355526
 _enable_loop = True
-_template_filename = '/Users/brock/sprint0/homepage/templates/Events.edit.html'
+_template_filename = 'C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\homepage\\templates/Events.edit.html'
 _template_uri = 'Events.edit.html'
 _source_encoding = 'ascii'
 import os, os.path, re
-_exports = ['content']
+_exports = ['left', 'content']
 
 
 def _mako_get_namespace(context, name):
@@ -28,11 +28,18 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
+        form = context.get('form', UNDEFINED)
+        def left():
+            return render_left(context._locals(__M_locals))
         def content():
             return render_content(context._locals(__M_locals))
-        form = context.get('form', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\n<!DOCTYPE html>\n<html>\n<head lang="en">\n    <meta charset="UTF-8">\n    <title></title>\n</head>\n')
+        __M_writer('\n<!DOCTYPE html>\n<html>\n<head lang="en">\n    <meta charset="UTF-8">\n    <title></title>\n</head>\n\n')
+        if 'parent' not in context._data or not hasattr(context._data['parent'], 'left'):
+            context['self'].left(**pageargs)
+        
+
+        __M_writer('\n\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
             context['self'].content(**pageargs)
         
@@ -43,12 +50,24 @@ def render_body(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
+def render_left(context,**pageargs):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        def left():
+            return render_left(context)
+        __M_writer = context.writer()
+        __M_writer('\n<div class="row">\n    <div id="left side" class="col-md-2">\n        <nav>\n            <ul class="nav nav-pills nav-stacked">\n                <li><a href="/homepage/Events/">Events</a></li>\n\n            </ul>\n        </nav>\n    </div>\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        form = context.get('form', UNDEFINED)
         def content():
             return render_content(context)
-        form = context.get('form', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n<body>\n<table>\n<form method="POST">\n    ')
         __M_writer(str( form ))
@@ -60,6 +79,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"uri": "Events.edit.html", "source_encoding": "ascii", "line_map": {"35": 1, "53": 8, "54": 12, "55": 12, "40": 17, "27": 0, "61": 55, "46": 8}, "filename": "/Users/brock/sprint0/homepage/templates/Events.edit.html"}
+{"source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\homepage\\templates/Events.edit.html", "uri": "Events.edit.html", "line_map": {"80": 74, "65": 21, "59": 9, "53": 9, "73": 25, "72": 21, "47": 30, "42": 19, "27": 0, "74": 25, "37": 1}}
 __M_END_METADATA
 """
