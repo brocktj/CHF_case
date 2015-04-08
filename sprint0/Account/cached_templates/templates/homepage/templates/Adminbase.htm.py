@@ -4,13 +4,13 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1428375738.738635
+_modified_time = 1428430030.656115
 _enable_loop = True
-_template_filename = 'C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0/homepage/templates/Adminbase.htm'
+_template_filename = '/Users/brock/Documents/CHF_case/sprint0/homepage/templates/Adminbase.htm'
 _template_uri = '/homepage/templates/Adminbase.htm'
 _source_encoding = 'ascii'
 import os, os.path, re
-_exports = ['left', 'footer', 'header', 'content']
+_exports = ['header', 'footer', 'left', 'content']
 
 
 from django_mako_plus.controller import static_files 
@@ -19,17 +19,17 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        def left():
-            return render_left(context._locals(__M_locals))
-        def content():
-            return render_content(context._locals(__M_locals))
-        def header():
-            return render_header(context._locals(__M_locals))
-        self = context.get('self', UNDEFINED)
         def footer():
             return render_footer(context._locals(__M_locals))
         request = context.get('request', UNDEFINED)
+        def header():
+            return render_header(context._locals(__M_locals))
         STATIC_URL = context.get('STATIC_URL', UNDEFINED)
+        def left():
+            return render_left(context._locals(__M_locals))
+        self = context.get('self', UNDEFINED)
+        def content():
+            return render_content(context._locals(__M_locals))
         __M_writer = context.writer()
         __M_writer('\n')
         static_renderer = static_files.StaticRenderer(self) 
@@ -72,13 +72,21 @@ def render_body(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
-def render_left(context,**pageargs):
+def render_header(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        def left():
-            return render_left(context)
+        def header():
+            return render_header(context)
+        request = context.get('request', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\n<div class="row">\n    <div id="left side" class="col-md-2">\n        <nav>\n            <ul class="nav nav-pills nav-stacked">\n                <li><a href="/homepage/Events/">Events</a></li>\n                <li><a href="/homepage/Users//">User Accounts</a></li>\n                <li><a href="/Store/StoreView/">Store</a></li>\n            </ul>\n        </nav>\n    </div>\n')
+        __M_writer('\n\n<nav class="navbar navbar-inverse navbar-fixed-top">\n    <div class="container">\n        <div class="navbar-header">\n            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"\n                    aria-expanded="false" aria-controls="navbar">\n                <span class="sr-only">Toggle navigation</span>\n                <span class="icon-bar"></span>\n                <span class="icon-bar"></span>\n                <span class="icon-bar"></span>\n            </button>\n            <a class="navbar-brand" href="/homepage">The Colonial Heritage Foundation <small>preserving history</small></a>\n        </div>\n        <div id="navbar" class="collapse navbar-collapse">\n            <ul class="nav navbar-nav">\n\n\n')
+        if request.user.username != '':
+            __M_writer('                <li><a href="/homepage/Users/">Account</a></li>\n                <li><a href="/Store/StoreView/">Store</a></li>\n                <li><a href="/homepage/Events/">Events</a></li>\n                <li><a href="/Store/WardrobeItem.get_late_items/" id="generate_report">Late Items</a></li>\n                <li><a href ="/Account/logout">Logout</a></li>\n                <li><a>Welcome: ')
+            __M_writer(str( request.user.username ))
+            __M_writer('</a></li>\n\n')
+        else:
+            __M_writer('                <li><a id="show_modal" href="#" class="text-right">Login</a></li>\n\n')
+        __M_writer('\n            </ul>\n        </div>\n    </div>\n</nav>\n\n<div class="btn-group">\n    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">\n        Action <span class="caret"></span>\n    </button>\n    <ul class="dropdown-menu" role="menu">\n        <li><a href="#">Action</a></li>\n        <li><a href="#">Another action</a></li>\n        <li><a href="#">Something else here</a></li>\n        <li class="divider"></li>\n\n        <li><a href="#">Separated link</a></li>\n    </ul>\n</div>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -96,21 +104,13 @@ def render_footer(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
-def render_header(context,**pageargs):
+def render_left(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        request = context.get('request', UNDEFINED)
-        def header():
-            return render_header(context)
+        def left():
+            return render_left(context)
         __M_writer = context.writer()
-        __M_writer('\n\n<nav class="navbar navbar-inverse navbar-fixed-top">\n    <div class="container">\n        <div class="navbar-header">\n            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"\n                    aria-expanded="false" aria-controls="navbar">\n                <span class="sr-only">Toggle navigation</span>\n                <span class="icon-bar"></span>\n                <span class="icon-bar"></span>\n                <span class="icon-bar"></span>\n            </button>\n            <a class="navbar-brand" href="/homepage">Colonial Heritage Foundation <small>preserving history</small></a>\n        </div>\n        <div id="navbar" class="collapse navbar-collapse">\n            <ul class="nav navbar-nav">\n\n\n')
-        if request.user.username != '':
-            __M_writer('                <li><a href="/homepage/Users/">Account</a></li>\n                <li><a href="/Store/StoreView/">Store</a></li>\n                <li><a href="/homepage/Events/">Events</a></li>\n                <li><a href="/Store/WardrobeItem.get_late_items/" id="generate_report">Late Items</a></li>\n                <li><a href ="/Account/logout">Logout</a></li>\n                <li><a>Welcome: ')
-            __M_writer(str( request.user.username ))
-            __M_writer('</a></li>\n\n')
-        else:
-            __M_writer('                <li><a id="show_modal" href="#" class="text-right">Login</a></li>\n\n')
-        __M_writer('\n            </ul>\n        </div>\n    </div>\n</nav>\n\n<div class="btn-group">\n    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">\n        Action <span class="caret"></span>\n    </button>\n    <ul class="dropdown-menu" role="menu">\n        <li><a href="#">Action</a></li>\n        <li><a href="#">Another action</a></li>\n        <li><a href="#">Something else here</a></li>\n        <li class="divider"></li>\n\n        <li><a href="#">Separated link</a></li>\n    </ul>\n</div>\n')
+        __M_writer('\n<div class="row">\n    <div id="left side" class="col-md-2">\n        <nav>\n            <ul class="nav nav-pills nav-stacked">\n                <li><a href="/homepage/Events/">Events</a></li>\n                <li><a href="/homepage/Users//">User Accounts</a></li>\n                <li><a href="/Store/StoreView/">Store</a></li>\n            </ul>\n        </nav>\n    </div>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -130,6 +130,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0/homepage/templates/Adminbase.htm", "uri": "/homepage/templates/Adminbase.htm", "line_map": {"67": 106, "68": 124, "69": 124, "125": 99, "108": 49, "75": 84, "109": 54, "16": 3, "81": 84, "18": 0, "99": 30, "110": 54, "87": 104, "111": 56, "93": 104, "107": 48, "34": 3, "35": 4, "131": 125, "39": 4, "40": 17, "41": 19, "42": 19, "43": 21, "44": 21, "45": 24, "46": 24, "47": 24, "112": 57, "113": 60, "52": 79, "119": 99, "57": 95, "106": 30, "62": 102}}
+{"uri": "/homepage/templates/Adminbase.htm", "source_encoding": "ascii", "filename": "/Users/brock/Documents/CHF_case/sprint0/homepage/templates/Adminbase.htm", "line_map": {"67": 106, "68": 124, "69": 124, "75": 30, "16": 3, "18": 0, "83": 48, "84": 49, "85": 54, "86": 54, "87": 56, "88": 57, "89": 60, "95": 104, "107": 84, "34": 3, "35": 4, "82": 30, "101": 104, "39": 4, "40": 17, "41": 19, "42": 19, "43": 21, "44": 21, "45": 24, "46": 24, "47": 24, "113": 84, "52": 79, "131": 125, "119": 99, "57": 95, "125": 99, "62": 102}}
 __M_END_METADATA
 """

@@ -9,6 +9,7 @@
 <body>
 <%block name="content">
 <a href="/Store/WardrobeItem.send_late_emails" class="btn btn-success">Send Email Notices</a>
+<a href="/Store/WardrobeItem.send_late_texts" class="btn btn-success">Send SMS Notices</a>
 <table class="table table-striped">
     <tr>
         <th>ID</th>
@@ -16,9 +17,11 @@
         <th>Size</th>
         <th>Date out</th>
         <th>Date Due</th>
+        <th></th>
     </tr>
     <tr>
         <td>Over 30 days late</td>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
@@ -34,6 +37,9 @@
         <td>${ rentedItem.size }</td>
         <td>${ RentedLineItem.date_out }</td>
         <td>${ RentedLineItem.date_due }</td>
+        %if RentedLineItem.transaction_ID is not None:
+        <td>${ RentedLineItem.transaction_ID.customer.first_name } ${ RentedLineItem.transaction_ID.customer.last_name }</td>
+        %endif
 
 
     </tr>
@@ -41,6 +47,7 @@
 
     <tr>
         <td>Over 60 days late</td>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
@@ -55,6 +62,9 @@
         <td>${ rentedItem.size }</td>
         <td>${ RentedLineItem.date_out }</td>
         <td>${ RentedLineItem.date_due }</td>
+        %if RentedLineItem.transaction_ID is not None:
+        <td>${ RentedLineItem.transaction_ID.customer.first_name } ${ RentedLineItem.transaction_ID.customer.last_name }</td>
+        %endif
 
 
     </tr>
@@ -65,7 +75,7 @@
         <td></td>
         <td></td>
         <td></td>
-
+        <td></td>
     </tr>
     %for RentedLineItem in late_items_90:
 
@@ -76,6 +86,9 @@
         <td>${ rentedItem.size }</td>
         <td>${ RentedLineItem.date_out }</td>
         <td>${ RentedLineItem.date_due }</td>
+        %if RentedLineItem.transaction_ID is not None:
+        <td>${ RentedLineItem.transaction_ID.customer.first_name } ${ RentedLineItem.transaction_ID.customer.last_name }</td>
+        %endif
 
 
     </tr>
