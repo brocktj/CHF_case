@@ -78,9 +78,9 @@ EMAIL_USE_SSL = False
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'Test1',
+        'NAME': 'Test',
         'USER': 'postgres',
-        'PASSWORD': 'Blaudrick',
+        'PASSWORD': 'Retalhuleu11',
         'HOST': '127.0.0.1',
         'PORT': '5432',
 
