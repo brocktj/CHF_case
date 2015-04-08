@@ -4,9 +4,9 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1428430524.222948
+_modified_time = 1428375845.788387
 _enable_loop = True
-_template_filename = 'C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0\\homepage\\templates/Events.html'
+_template_filename = 'C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\homepage\\templates/Events.html'
 _template_uri = 'Events.html'
 _source_encoding = 'ascii'
 import os, os.path, re
@@ -23,7 +23,7 @@ def _mako_generate_namespaces(context):
     pass
 def _mako_inherit(template, context):
     _mako_generate_namespaces(context)
-    return runtime._inherit_from(context, 'base.htm', _template_uri)
+    return runtime._inherit_from(context, 'Managerbase.htm', _template_uri)
 def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
@@ -34,17 +34,17 @@ def render_body(context,**pageargs):
         def content():
             return render_content(context._locals(__M_locals))
         __M_writer = context.writer()
-        __M_writer('\r\n<!DOCTYPE html>\r\n<html>\r\n<head lang="en">\r\n    <meta charset="UTF-8">\r\n    <title></title>\r\n</head>\r\n<body>\r\n')
+        __M_writer('\n<!DOCTYPE html>\n<html>\n<head lang="en">\n    <meta charset="UTF-8">\n    <title></title>\n</head>\n<body>\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
             context['self'].content(**pageargs)
         
 
-        __M_writer('\r\n')
+        __M_writer('\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'left'):
             context['self'].left(**pageargs)
         
 
-        __M_writer('\r\n\r\n</body>\r\n</html>')
+        __M_writer('\n\n</body>\n</html>')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -56,7 +56,7 @@ def render_left(context,**pageargs):
         def left():
             return render_left(context)
         __M_writer = context.writer()
-        __M_writer('\r\n<div class="row">\r\n    <div id="left side" class="col-md-2">\r\n        <nav>\r\n            <ul class="nav nav-pills nav-stacked">\r\n                <li><a href="/homepage/Events/">Events</a></li>\r\n\r\n            </ul>\r\n        </nav>\r\n    </div>\r\n')
+        __M_writer('\n<div class="row">\n    <div id="left side" class="col-md-2">\n        <nav>\n            <ul class="nav nav-pills nav-stacked">\n                <li><a href="/homepage/Events/">Events</a></li>\n\n            </ul>\n        </nav>\n    </div>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -69,26 +69,26 @@ def render_content(context,**pageargs):
         def content():
             return render_content(context)
         __M_writer = context.writer()
-        __M_writer('\r\n<a href="/homepage/Events.Create">New Event</a>\r\n<table class="table table-striped">\r\n    <tr>\r\n        <th>ID</th>\r\n        <th>Name</th>\r\n        <th>Description</th>\r\n        <th>Start Date</th>\r\n        <th>End Date</th>\r\n        <th>Actions</th>\r\n    </tr>\r\n\r\n')
+        __M_writer('\n<a href="/homepage/Events.Create">New Event</a>\n<table class="table table-striped">\n    <tr>\n        <th>ID</th>\n        <th>Name</th>\n        <th>Description</th>\n        <th>Start Date</th>\n        <th>End Date</th>\n        <th>Actions</th>\n    </tr>\n\n')
         for Event in events:
-            __M_writer('    <tr>\r\n        <td>')
+            __M_writer('    <tr>\n        <td>')
             __M_writer(str( Event.id ))
-            __M_writer('</td>\r\n        <td>')
+            __M_writer('</td>\n        <td>')
             __M_writer(str( Event.name ))
-            __M_writer('</td>\r\n        <td>')
+            __M_writer('</td>\n        <td>')
             __M_writer(str( Event.description ))
-            __M_writer('</td>\r\n        <td>')
+            __M_writer('</td>\n        <td>')
             __M_writer(str( Event.start_date ))
-            __M_writer('</td>\r\n        <td>')
+            __M_writer('</td>\n        <td>')
             __M_writer(str( Event.end_date ))
-            __M_writer('</td>\r\n        <td><a href="/homepage/Events.edit/')
+            __M_writer('</td>\n        <td><a href="/homepage/Events.edit/')
             __M_writer(str( Event.id ))
             __M_writer('">Edit</a> | <a href="/homepage/Events.Delete/')
             __M_writer(str( Event.id ))
             __M_writer('">Delete</a> | <a href="/homepage/Events.view_details/')
             __M_writer(str( Event.id ))
-            __M_writer('">Details</a>\r\n        </td>\r\n\r\n    </tr>\r\n')
-        __M_writer('</table>\r\n')
+            __M_writer('">Details</a>\n        </td>\n\n    </tr>\n')
+        __M_writer('</table>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -96,6 +96,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0\\homepage\\templates/Events.html", "uri": "Events.html", "source_encoding": "ascii", "line_map": {"65": 9, "72": 9, "73": 21, "74": 22, "75": 23, "76": 23, "77": 24, "78": 24, "79": 25, "80": 25, "81": 26, "82": 26, "83": 27, "84": 27, "85": 28, "86": 28, "87": 28, "88": 28, "89": 28, "90": 28, "27": 0, "97": 91, "91": 33, "37": 1, "42": 34, "47": 45, "53": 35, "59": 35}}
+{"source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\homepage\\templates/Events.html", "uri": "Events.html", "line_map": {"65": 9, "72": 9, "73": 21, "74": 22, "75": 23, "76": 23, "77": 24, "78": 24, "79": 25, "80": 25, "81": 26, "82": 26, "83": 27, "84": 27, "85": 28, "86": 28, "87": 28, "88": 28, "89": 28, "90": 28, "27": 0, "97": 91, "91": 33, "37": 1, "42": 34, "47": 45, "53": 35, "59": 35}}
 __M_END_METADATA
 """

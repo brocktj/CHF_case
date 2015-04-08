@@ -4,9 +4,9 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1428429746.592077
+_modified_time = 1428357007.52849
 _enable_loop = True
-_template_filename = 'C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0/homepage/templates/base_ajax.htm'
+_template_filename = 'C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0/homepage/templates/base_ajax.htm'
 _template_uri = '/homepage/templates/base_ajax.htm'
 _source_encoding = 'ascii'
 import os, os.path, re
@@ -19,27 +19,27 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
+        request = context.get('request', UNDEFINED)
         def content():
             return render_content(context._locals(__M_locals))
-        request = context.get('request', UNDEFINED)
         self = context.get('self', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\r\n')
-        __M_writer('\r\n')
+        __M_writer('\n')
+        __M_writer('\n')
         static_renderer = static_files.StaticRenderer(self) 
         
         __M_locals_builtin_stored = __M_locals_builtin()
         __M_locals.update(__M_dict_builtin([(__M_key, __M_locals_builtin_stored[__M_key]) for __M_key in ['static_renderer'] if __M_key in __M_locals_builtin_stored]))
-        __M_writer('\r\n\r\n')
+        __M_writer('\n\n')
         __M_writer(str( static_renderer.get_template_css(request, context)  ))
-        __M_writer('\r\n\r\n')
+        __M_writer('\n\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
             context['self'].content(**pageargs)
         
 
-        __M_writer('  \r\n\r\n')
+        __M_writer('  \n\n')
         __M_writer(str( static_renderer.get_template_js(request, context)  ))
-        __M_writer('\r\n')
+        __M_writer('\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -51,7 +51,7 @@ def render_content(context,**pageargs):
         def content():
             return render_content(context)
         __M_writer = context.writer()
-        __M_writer('\r\n  Sub-templates should place their ajax content here.\r\n')
+        __M_writer('\n  Sub-templates should place their ajax content here.\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -59,6 +59,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"uri": "/homepage/templates/base_ajax.htm", "line_map": {"33": 7, "34": 10, "35": 10, "48": 13, "40": 15, "41": 18, "42": 18, "60": 54, "16": 6, "18": 0, "54": 13, "27": 4, "28": 6, "29": 7}, "filename": "C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0/homepage/templates/base_ajax.htm", "source_encoding": "ascii"}
+{"uri": "/homepage/templates/base_ajax.htm", "line_map": {"33": 7, "34": 10, "35": 10, "48": 13, "40": 15, "41": 18, "42": 18, "60": 54, "16": 6, "18": 0, "54": 13, "27": 4, "28": 6, "29": 7}, "source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0/homepage/templates/base_ajax.htm"}
 __M_END_METADATA
 """

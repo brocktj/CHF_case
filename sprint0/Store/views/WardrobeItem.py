@@ -10,7 +10,6 @@ from django.contrib.auth.decorators import permission_required
 import datetime
 from decimal import Decimal
 from django.core.mail import send_mail
-from twilio.rest import TwilioRestClient
 
 templater = get_renderer('Store')
 
@@ -40,7 +39,6 @@ def check_in(request):
         form = check_in_form(request.POST)
 
         if form.is_valid():
-            current_date = datetime.datetime.now()
             print('the form is valid')
             fees = 0
             returnItem = hmod.RentedLineItem.objects.get(id=request.urlparams[0])
@@ -55,6 +53,7 @@ def check_in(request):
                 print('standard late fees will be charges')
                 due_date = returnItem.date_due.strftime("%Y-%m-%d")
                 d1 = datetime.datetime.strptime(due_date, "%Y-%m-%d")
+                current_date = datetime.datetime.now()
                 current_date1 = current_date.strftime("%Y-%m-%d")
                 d2 = datetime.datetime.strptime(current_date1, "%Y-%m-%d")
                 total_days = abs((d2 - d1).days)
@@ -173,26 +172,20 @@ def Delete(request):
 @view_function
 @permission_required('homepage.manager_rights', login_url='/homepage/login.unauthorized_access')
 def send_late_emails(request):
+
+    params = {}
+
     results = get_late_lists()
 
     send_overdue_email(results['30'])
     send_overdue_email(results['60'])
     send_overdue_email(results['90'])
 
-    return HttpResponseRedirect('/Store/WardrobeItem.get_late_items')
+    params["late_items_30"] = results['30']
+    params["late_items_60"] = results['60']
+    params["late_items_90"] = results['90']
 
-@view_function
-@permission_required('homepage.manager_rights', login_url='/homepage/login.unauthorized_access')
-def send_late_texts(request):
-    resultz = get_late_lists()
-
-    send_overdue_text(resultz['30'])
-    send_overdue_text(resultz['60'])
-    send_overdue_text(resultz['90'])
-
-    print("Text messages sent")
-
-    return HttpResponseRedirect('/Store/WardrobeItem.get_late_items')
+    return templater.render_to_response(request, 'WardrobeItem.get_late_items.html', params)
 
 @view_function
 @permission_required('homepage.manager_rights', login_url='/homepage/login.unauthorized_access')
@@ -216,38 +209,18 @@ class check_in_form(forms.Form):
     non_standard_fee = forms.DecimalField(required=False)
 
 def send_overdue_email(items_list):
-    for RentedLineItem in items_list:
-        email = RentedLineItem.transaction_ID.customer.email
+    for hmod.RentedLineItem in items_list:
+        email = hmod.RentedLineItem.transaction_ID.customer.email
         print(email)
-        item = RentedLineItem.wardrobe_item_ID.name
+        item = hmod.RentedLineItem.wardrobe_item_ID.name
         print(item)
-        due_date = RentedLineItem.date_due
+        due_date = hmod.RentedLineItem.date_due
         email_text = 'Your rental item: %s was due on %s\r ' \
                  'Please return the item to the colonial heritage ' \
                  'foundation to avoid incurring more charges' % (item, due_date)
         send_mail('Your overdue rental', email_text,
               'brock@chfoundation.us', [email], fail_silently=True)
         print("method success!!!")
-
-def send_overdue_text(items_list):
-    for RentedLineItem in items_list:
-        phone_no = "+1" + RentedLineItem.transaction_ID.customer.phone
-        print(phone_no)
-        item = RentedLineItem.wardrobe_item_ID.name
-        print(item)
-        due_date = RentedLineItem.date_due
-        message_body = 'Your rental item: %s was due on %s\r ' \
-                 'Please return the item to the colonial heritage ' \
-                 'foundation to avoid incurring more charges' % (item, due_date)
-        auth_token1 = '279cccc1aeabd147eec2a179902f9cb0'
-        # Your Account Sid and Auth Token from twilio.com/user/account
-        account_sid = "AC1d871be38b07534bc9b26312e2eaaa3d"
-        auth_token  = auth_token1
-        client = TwilioRestClient(account_sid, auth_token)
-
-        message = client.messages.create(body=message_body,to=phone_no, from_="+12086293984")
-        print(message.sid)
-
 
 def get_late_lists():
     now1 = datetime.datetime.now()
@@ -257,11 +230,12 @@ def get_late_lists():
     print(now60)
     now90 = now1 - datetime.timedelta(days=90)
     print(now90)
+    params = {}
+    #something goes here
     #get a list of items between [30 and ]60 days
     late_list30 = hmod.RentedLineItem.objects.filter(date_in__exact=None, date_due__lte=now30, date_due__gt=now60)
     #get a list of items between [60 and ]90 days
     late_list60 = hmod.RentedLineItem.objects.filter(date_in__exact=None, date_due__lte=now60, date_due__gt=now90)
     #get a list of items over 90 days late
     late_list90 = hmod.RentedLineItem.objects.filter(date_in__exact=None, date_due__lte=now90)
-    print("end of list getting")
     return {'30': late_list30, '60': late_list60, '90': late_list90}

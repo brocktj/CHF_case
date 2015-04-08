@@ -4,13 +4,13 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1428375740.654837
+_modified_time = 1428382713.268379
 _enable_loop = True
-_template_filename = 'C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0/homepage/templates/base.htm'
-_template_uri = '/homepage/templates/base.htm'
+_template_filename = '/Users/brock/Documents/CHF_case/sprint0/homepage/templates/base.htm'
+_template_uri = 'base.htm'
 _source_encoding = 'ascii'
 import os, os.path, re
-_exports = ['left', 'footer', 'header', 'content']
+_exports = ['left', 'content', 'footer', 'header']
 
 
 from django_mako_plus.controller import static_files 
@@ -21,15 +21,15 @@ def render_body(context,**pageargs):
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         def left():
             return render_left(context._locals(__M_locals))
-        def content():
-            return render_content(context._locals(__M_locals))
         def header():
             return render_header(context._locals(__M_locals))
-        self = context.get('self', UNDEFINED)
+        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
+        def content():
+            return render_content(context._locals(__M_locals))
         def footer():
             return render_footer(context._locals(__M_locals))
         request = context.get('request', UNDEFINED)
-        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
+        self = context.get('self', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n')
@@ -85,6 +85,18 @@ def render_left(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
+def render_content(context,**pageargs):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        def content():
+            return render_content(context)
+        __M_writer = context.writer()
+        __M_writer('\n\n        ')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
 def render_footer(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
@@ -100,9 +112,9 @@ def render_footer(context,**pageargs):
 def render_header(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        request = context.get('request', UNDEFINED)
         def header():
             return render_header(context)
+        request = context.get('request', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n\n<nav class="navbar navbar-inverse navbar-fixed-top">\n    <div class="container">\n        <div class="navbar-header">\n            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"\n                    aria-expanded="false" aria-controls="navbar">\n                <span class="sr-only">Toggle navigation</span>\n                <span class="icon-bar"></span>\n                <span class="icon-bar"></span>\n                <span class="icon-bar"></span>\n            </button>\n            <a class="navbar-brand" href="/homepage">Colonial Heritage Foundation <small>preserving history</small></a>\n        </div>\n        <div id="navbar" class="collapse navbar-collapse">\n            <ul class="nav navbar-nav">\n\n\n')
         if request.user.username != '':
@@ -122,20 +134,8 @@ def render_header(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
-def render_content(context,**pageargs):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        def content():
-            return render_content(context)
-        __M_writer = context.writer()
-        __M_writer('\n\n        ')
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
 """
 __M_BEGIN_METADATA
-{"source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0/homepage/templates/base.htm", "uri": "/homepage/templates/base.htm", "line_map": {"107": 34, "68": 122, "69": 124, "70": 124, "108": 52, "82": 93, "76": 93, "109": 53, "16": 4, "18": 0, "131": 99, "110": 57, "88": 120, "100": 34, "111": 58, "94": 120, "112": 59, "34": 2, "35": 4, "36": 5, "40": 5, "41": 17, "42": 21, "43": 21, "44": 23, "45": 23, "46": 28, "47": 28, "48": 28, "113": 60, "114": 62, "115": 64, "116": 64, "53": 88, "118": 67, "119": 70, "137": 131, "58": 95, "117": 66, "125": 99, "63": 101}}
+{"source_encoding": "ascii", "filename": "/Users/brock/Documents/CHF_case/sprint0/homepage/templates/base.htm", "uri": "base.htm", "line_map": {"128": 64, "129": 66, "130": 67, "131": 70, "68": 122, "69": 124, "70": 124, "137": 131, "82": 93, "76": 93, "16": 4, "18": 0, "127": 64, "88": 99, "100": 120, "125": 60, "122": 57, "94": 99, "112": 34, "34": 2, "35": 4, "36": 5, "40": 5, "41": 17, "42": 21, "43": 21, "44": 23, "45": 23, "46": 28, "47": 28, "48": 28, "53": 88, "119": 34, "120": 52, "121": 53, "58": 95, "123": 58, "124": 59, "106": 120, "126": 62, "63": 101}}
 __M_END_METADATA
 """

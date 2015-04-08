@@ -11,6 +11,7 @@ from django.contrib.auth.decorators import permission_required
 templater = get_renderer('homepage')
 
 @view_function
+@permission_required('homepage.manager_rights', login_url='/homepage/login.unauthorized_access')
 def process_request(request):
     params = {}
     params['events'] = hmod.Event.objects.all()

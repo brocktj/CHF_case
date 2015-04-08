@@ -4,9 +4,9 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1428430044.765803
+_modified_time = 1428362642.20815
 _enable_loop = True
-_template_filename = 'C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0\\Store\\templates/PersonalProduct.html'
+_template_filename = 'C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\Store\\templates/PersonalProduct.html'
 _template_uri = 'PersonalProduct.html'
 _source_encoding = 'ascii'
 import os, os.path, re
@@ -30,21 +30,21 @@ def render_body(context,**pageargs):
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         def left():
             return render_left(context._locals(__M_locals))
-        persProducts = context.get('persProducts', UNDEFINED)
         def content():
             return render_content(context._locals(__M_locals))
+        persProducts = context.get('persProducts', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\r\n\r\n\r\n')
+        __M_writer('\n\n\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'left'):
             context['self'].left(**pageargs)
         
 
-        __M_writer('\r\n\r\n')
+        __M_writer('\n\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
             context['self'].content(**pageargs)
         
 
-        __M_writer('\r\n</body>\r\n</html>')
+        __M_writer('\n</body>\n</html>')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -56,7 +56,7 @@ def render_left(context,**pageargs):
         def left():
             return render_left(context)
         __M_writer = context.writer()
-        __M_writer('\r\n<div class="row">\r\n    <div id="left side" class="col-md-2">\r\n        <nav>\r\n            <ul class="nav nav-pills nav-stacked">\r\n                <li><a href="/Store/BulkProduct/">Bulk Products</a></li>\r\n                <li><a href="/Store/PersonalProduct/">Personal Products</a></li>\r\n                <li><a href="/Store/IndividualProduct/">Individual Products</a></li>\r\n            </ul>\r\n        </nav>\r\n    </div>\r\n')
+        __M_writer('\n<div class="row">\n    <div id="left side" class="col-md-2">\n        <nav>\n            <ul class="nav nav-pills nav-stacked">\n                <li><a href="/Store/BulkProduct/">Bulk Products</a></li>\n                <li><a href="/Store/PersonalProduct/">Personal Products</a></li>\n                <li><a href="/Store/IndividualProduct/">Individual Products</a></li>\n            </ul>\n        </nav>\n    </div>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -65,30 +65,30 @@ def render_left(context,**pageargs):
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        persProducts = context.get('persProducts', UNDEFINED)
         def content():
             return render_content(context)
+        persProducts = context.get('persProducts', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\r\n<a href="/Store/PersonalProduct.Create">Add item</a>\r\n<table class="table table-striped">\r\n    <tr>\r\n        <th>ID</th>\r\n        <th>Name</th>\r\n        <th>Description</th>\r\n        <th>Current Price</th>\r\n        <th>Instruction Form</th>\r\n        <th>Production time in days</th>\r\n        <th>Action</th>\r\n    </tr>\r\n')
+        __M_writer('\n<a href="/Store/PersonalProduct.Create">Add item</a>\n<table class="table table-striped">\n    <tr>\n        <th>ID</th>\n        <th>Name</th>\n        <th>Description</th>\n        <th>Current Price</th>\n        <th>Instruction Form</th>\n        <th>Production time in days</th>\n        <th>Action</th>\n    </tr>\n')
         for PersonalProduct in persProducts:
-            __M_writer('    <tr>\r\n        <td>')
+            __M_writer('    <tr>\n        <td>')
             __M_writer(str( PersonalProduct.id ))
-            __M_writer('</td>\r\n        <td>')
+            __M_writer('</td>\n        <td>')
             __M_writer(str( PersonalProduct.name ))
-            __M_writer('</td>\r\n        <td>')
+            __M_writer('</td>\n        <td>')
             __M_writer(str( PersonalProduct.description ))
-            __M_writer('</td>\r\n        <td>')
+            __M_writer('</td>\n        <td>')
             __M_writer(str( PersonalProduct.current_price ))
-            __M_writer('</td>\r\n        <td>')
+            __M_writer('</td>\n        <td>')
             __M_writer(str( PersonalProduct.order_form_name ))
-            __M_writer('</td>\r\n        <td>')
+            __M_writer('</td>\n        <td>')
             __M_writer(str( PersonalProduct.production_time ))
-            __M_writer('</td>\r\n        <td> <a href="/Store/PersonalProduct.edit/')
+            __M_writer('</td>\n        <td> <a href="/Store/PersonalProduct.edit/')
             __M_writer(str( PersonalProduct.id ))
             __M_writer('">Edit</a> | <a href="/Store/PersonalProduct.Delete/')
             __M_writer(str( PersonalProduct.id ))
-            __M_writer('">Delete</a>  </td>\r\n\r\n    </tr>\r\n')
-        __M_writer('</table>\r\n')
+            __M_writer('">Delete</a>  </td>\n\n    </tr>\n')
+        __M_writer('</table>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -96,6 +96,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"uri": "PersonalProduct.html", "filename": "C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0\\Store\\templates/PersonalProduct.html", "line_map": {"65": 17, "72": 17, "73": 29, "74": 30, "75": 31, "76": 31, "77": 32, "78": 32, "79": 33, "80": 33, "81": 34, "82": 34, "83": 35, "84": 35, "85": 36, "86": 36, "87": 37, "88": 37, "89": 37, "90": 37, "27": 0, "97": 91, "91": 41, "37": 1, "42": 15, "47": 42, "53": 4, "59": 4}, "source_encoding": "ascii"}
+{"source_encoding": "ascii", "line_map": {"65": 17, "72": 17, "73": 29, "74": 30, "75": 31, "76": 31, "77": 32, "78": 32, "79": 33, "80": 33, "81": 34, "82": 34, "83": 35, "84": 35, "85": 36, "86": 36, "87": 37, "88": 37, "89": 37, "90": 37, "27": 0, "97": 91, "91": 41, "37": 1, "42": 15, "47": 42, "53": 4, "59": 4}, "filename": "C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\Store\\templates/PersonalProduct.html", "uri": "PersonalProduct.html"}
 __M_END_METADATA
 """
