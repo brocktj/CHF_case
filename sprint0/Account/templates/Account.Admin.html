@@ -1,11 +1,5 @@
 <%inherit file="/homepage/templates/Adminbase.htm" />
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+
 <%block name="content">
 <h1>Admin Page</h1>
 <p>Welcome ${ user.first_name } ${ user.last_name} </p>
@@ -45,7 +39,3 @@
 <div><a href="/Account/Account.edit_user_info" class="btn btn-success">Update your information</a></div>
 </%block>
 
-
-
-</body>
-</html>
