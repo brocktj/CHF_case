@@ -4,7 +4,7 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1428430524.222948
+_modified_time = 1428467170.447271
 _enable_loop = True
 _template_filename = 'C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0\\homepage\\templates/Events.html'
 _template_uri = 'Events.html'
@@ -69,7 +69,7 @@ def render_content(context,**pageargs):
         def content():
             return render_content(context)
         __M_writer = context.writer()
-        __M_writer('\r\n<a href="/homepage/Events.Create">New Event</a>\r\n<table class="table table-striped">\r\n    <tr>\r\n        <th>ID</th>\r\n        <th>Name</th>\r\n        <th>Description</th>\r\n        <th>Start Date</th>\r\n        <th>End Date</th>\r\n        <th>Actions</th>\r\n    </tr>\r\n\r\n')
+        __M_writer('\r\n\r\n<br>\r\n<br>\r\n<a href="/homepage/Events.Create" class="btn btn-warning">New Event</a>\r\n<br>\r\n<br>\r\n\r\n<table class="table table-striped">\r\n    <tr>\r\n        <th>ID</th>\r\n        <th>Name</th>\r\n        <th>Description</th>\r\n        <th>Start Date</th>\r\n        <th>End Date</th>\r\n        <th>Actions</th>\r\n    </tr>\r\n\r\n')
         for Event in events:
             __M_writer('    <tr>\r\n        <td>')
             __M_writer(str( Event.id ))
@@ -96,6 +96,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0\\homepage\\templates/Events.html", "uri": "Events.html", "source_encoding": "ascii", "line_map": {"65": 9, "72": 9, "73": 21, "74": 22, "75": 23, "76": 23, "77": 24, "78": 24, "79": 25, "80": 25, "81": 26, "82": 26, "83": 27, "84": 27, "85": 28, "86": 28, "87": 28, "88": 28, "89": 28, "90": 28, "27": 0, "97": 91, "91": 33, "37": 1, "42": 34, "47": 45, "53": 35, "59": 35}}
+{"line_map": {"65": 9, "72": 9, "73": 27, "74": 28, "75": 29, "76": 29, "77": 30, "78": 30, "79": 31, "80": 31, "81": 32, "82": 32, "83": 33, "84": 33, "85": 34, "86": 34, "87": 34, "88": 34, "89": 34, "90": 34, "27": 0, "97": 91, "91": 39, "37": 1, "42": 40, "47": 51, "53": 41, "59": 41}, "uri": "Events.html", "source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0\\homepage\\templates/Events.html"}
 __M_END_METADATA
 """

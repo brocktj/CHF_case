@@ -4,7 +4,7 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1428430039.108826
+_modified_time = 1428466532.976334
 _enable_loop = True
 _template_filename = 'C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0\\Store\\templates/BulkProduct.html'
 _template_uri = 'BulkProduct.html'
@@ -69,7 +69,7 @@ def render_content(context,**pageargs):
             return render_content(context)
         blkProducts = context.get('blkProducts', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\r\n<body>\r\n<a href="/Store/BulkProduct.Create">Add item</a>\r\n<table class="table table-striped">\r\n    <tr>\r\n        <th>ID</th>\r\n        <th>Name</th>\r\n        <th>Description</th>\r\n        <th>Quantity on hand</th>\r\n        <th>Current Price</th>\r\n        <th>Actions</th>\r\n    </tr>\r\n')
+        __M_writer('\r\n<body>\r\n<br>\r\n<br>\r\n<a href="/Store/BulkProduct.Create" class="btn btn-warning">Add item</a>\r\n<br>\r\n<br>\r\n<table class="table table-striped">\r\n    <tr>\r\n        <th>ID</th>\r\n        <th>Name</th>\r\n        <th>Description</th>\r\n        <th>Quantity on hand</th>\r\n        <th>Current Price</th>\r\n        <th>Actions</th>\r\n    </tr>\r\n')
         for BulkProduct in blkProducts:
             __M_writer('    <tr>\r\n        <td>')
             __M_writer(str( BulkProduct.id ))
@@ -94,6 +94,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"uri": "BulkProduct.html", "filename": "C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0\\Store\\templates/BulkProduct.html", "line_map": {"65": 17, "72": 17, "73": 29, "74": 30, "75": 31, "76": 31, "77": 32, "78": 32, "79": 33, "80": 33, "81": 34, "82": 34, "83": 35, "84": 35, "85": 36, "86": 36, "87": 36, "88": 36, "89": 40, "27": 0, "95": 89, "37": 1, "42": 15, "47": 42, "53": 4, "59": 4}, "source_encoding": "ascii"}
+{"line_map": {"65": 17, "72": 17, "73": 33, "74": 34, "75": 35, "76": 35, "77": 36, "78": 36, "79": 37, "80": 37, "81": 38, "82": 38, "83": 39, "84": 39, "85": 40, "86": 40, "87": 40, "88": 40, "89": 44, "27": 0, "95": 89, "37": 1, "42": 15, "47": 46, "53": 4, "59": 4}, "uri": "BulkProduct.html", "source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0\\Store\\templates/BulkProduct.html"}
 __M_END_METADATA
 """

@@ -1,0 +1,18 @@
+.cart {
+
+    float: right;
+    width: 100px;
+
+}
+
+.delete_cart {
+
+    float: right;
+    width: 100px;
+
+}
+
+.search {
+
+    font-size: 20px;
+}
