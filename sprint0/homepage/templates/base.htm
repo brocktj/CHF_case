@@ -32,9 +32,16 @@
 
 <body>
 <%block name ="header">
+<div class="row">
+    <div id="left side" class="col-md-2">
 
-<nav class="navbar navbar-inverse navbar-fixed-top">
+    </div>
+<div>
+    <img src="http://2.bp.blogspot.com/-Al9-SWLlHdo/UmGvQhcFQqI/AAAAAAAAACk/mBRacWRhQSw/s400/logoH2.png">
+</div>
+<nav class="navbar navbar-inverse">
     <div class="container">
+
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
                     aria-expanded="false" aria-controls="navbar">
@@ -43,14 +50,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/homepage">Colonial Heritage Foundation <small>preserving history</small></a>
+
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
 
 
                 % if request.user.username != '':
-                <li><a href="/homepage/Users/">Account</a></li>
+                %if request.user.groups.filter(name='AdminGroup').exists():
+                <li id="first_item"><a href="/homepage/Users/">Accounts</a></li>
+                %else:
+                <li><a href="/Account/Account/">Account</a></li>
+                %endif
+
                 <li><a href="/Store/StoreView/">Store</a></li>
                 <li><a href="/homepage/Events/">Events</a></li>
 
@@ -64,6 +76,8 @@
                 <li><a>Welcome: ${ request.user.username }</a></li>
 
                 %else:
+                <li><a href="/Store/StoreView/">Store</a></li>
+                <li><a href="/homepage/Events/">Events</a></li>
                 <li><a id="show_modal" href="#" class="text-right">Login</a></li>
 
                 %endif
@@ -73,22 +87,8 @@
     </div>
 </nav>
 
-<div class="btn-group">
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-        Action <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" role="menu">
-        <li><a href="#">Action</a></li>
-        <li><a href="#">Another action</a></li>
-        <li><a href="#">Something else here</a></li>
-        <li class="divider"></li>
-        <li><a href="#">Separated link</a></li>
-    </ul>
-</div>
 </%block>
 
-<br>
-<br>
 
 <%block name="left">
 
@@ -105,7 +105,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h4 class="modal-title" id="myModalLabel">Colonial Heritage Foundation</h4>
       </div>
       <div class="modal-body">
         ...

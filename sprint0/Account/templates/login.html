@@ -10,14 +10,34 @@ import datetime
     <title></title>
 </head>
 <body>
+
+<%block name="left">
+<div class="row">
+    <div id="left side" class="col-md-2">
+
+    </div>
+</%block>
+
 <%block name="content">
-<br>
-<br>
-<div><a href="/Account/SignUp.Create" class="btn btn-primary">Sign Up</a></div>
-<div><strong>or login to user our services</strong></div>
-<br>
-<br>
-<div><a href="/password_reset/">Reset Password</a></div>
+
+
+
+        <h2><center>Welcome to the Colonial Heritage Foundation</center></h2>
+        <h3><center>Preserving our history</center></h3>
+        <center>
+            <img id="item_picture" src="https://news.uns.purdue.edu/images/2014/washington-painting.jpg"><br>
+        </center>
+
+        <br>
+        <div>
+            <center>
+            <a href="#" class="loginbutton show_modal text-right btn btn-primary">Login</a>
+
+            <a href="/Account/SignUp.Create" class="btn btn-primary">Sign Up</a>
+            </center>
+        </div>
+
+
 <div class="modal fade" id="login_dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

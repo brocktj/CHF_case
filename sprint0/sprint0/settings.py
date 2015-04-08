@@ -78,9 +78,9 @@ EMAIL_USE_SSL = False
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'Test1',
+        'NAME': 'Test',
         'USER': 'postgres',
-        'PASSWORD': 'Blaudrick',
+        'PASSWORD': 'Retalhuleu11',
         'HOST': '127.0.0.1',
         'PORT': '5432',
 
@@ -143,8 +143,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'Store/media/images')
 DMP_TEMPLATES_CACHE_DIR = 'cached_templates'
 
 # the default app and page to render in Mako when the url is too short
-DMP_DEFAULT_PAGE = 'index'
-DMP_DEFAULT_APP = 'homepage'
+DMP_DEFAULT_PAGE = 'login'
+DMP_DEFAULT_APP = 'Account'
 
 # these are included in every template by default - if you put your most-used libraries here, you won't have to import them exlicitly in templates
 DMP_DEFAULT_TEMPLATE_IMPORTS = [

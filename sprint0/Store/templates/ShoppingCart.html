@@ -7,42 +7,71 @@
     <title></title>
 </head>
 <body>
+
 <%block name="content">
-<div>${ warnings or " " }</div>
-%for k in x:
-    <% item = hmod.BulkProduct.objects.get(id=k) %>
-    <% qty = x.get(k) %>
+<table class="table table-striped">
+    <tr>
+        <td><strong>Item</strong></td>
+        <td></td>
+        <td><strong>Quantity</strong></td>
+        <td><strong>Price</strong></td>
 
-<div>
-        <div>
+
+    </tr>
+    <% total = 0 %>
+    %for k in x:
+    <tr>
+
+        <% item = hmod.BulkProduct.objects.get(id=k) %>
+        <% qty = x.get(k) %>
+
+        <td>
             ${ item.name }
-        </div>
-        <div>
-            ${ item.current_price }
-        </div>
-        <div>
-           ${ qty }
-        </div>
-    </div>
-%endfor
+        </td>
+        <td>
+            <a class="btn btn-warning" href="/Store/ShoppingCart.delete_item/${ item.id }">Remove</a>
+        </td>
+        <td>
+            ${ qty }
+        </td>
+        <td>
+            $${ item.current_price }
 
+        </td>
+        <% total += (int(qty) * item.current_price) %>
+    </tr>
+
+    %endfor
 %for i in y:
     <% item = hmod.WardrobeItem.objects.get(id=i) %>
 
-<div>
-        <div>
+<tr>
+        <td>
             ${ item.name }
-        </div>
-        <div>
-            ${ item.standard_rental_value }
-        </div>
-        <div>
-           1
-        </div>
-    </div>
+        </td>
+        <td>
+            <a class="btn btn-warning" href="/Store/ShoppingCart.delete_rental_item/${ item.id }">Remove</a>
+        </td>
+        <td>
+            1
+        </td>
+        <td>
+           $${ item.standard_rental_value }
+        </td>
+    <% total += item.standard_rental_value %>
+    </tr>
 %endfor
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Total:</td>
+        <td>$${ total }</td>
 
-   ${ current_cart }
+
+    </tr>
+
+</table>
+
 </%block>
 </body>
 </html>

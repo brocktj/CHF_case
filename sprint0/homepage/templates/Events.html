@@ -1,4 +1,4 @@
-<%inherit file="Managerbase.htm" />
+<%inherit file="base.htm" />
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -7,9 +7,13 @@
 </head>
 <body>
 <%block name="content">
-<br>
-<br>
+<h1>Upcoming Events:</h1>
+
+
+%if request.user.groups.filter(name='AdminGroup').exists():
 <a href="/homepage/Events.Create" class="btn btn-warning">New Event</a>
+%endif
+
 <br>
 <br>
 <table class="table table-striped">
@@ -29,7 +33,11 @@
         <td>${ Event.description }</td>
         <td>${ Event.start_date }</td>
         <td>${ Event.end_date }</td>
+        %if request.user.groups.filter(name='AdminGroup').exists():
         <td><a href="/homepage/Events.edit/${ Event.id }">Edit</a> | <a href="/homepage/Events.Delete/${ Event.id }">Delete</a> | <a href="/homepage/Events.view_details/${ Event.id }">Details</a>
+        %else:
+        <td><a href="/homepage/Events.view_details/${ Event.id }">Details</a>
+        %endif
         </td>
 
     </tr>

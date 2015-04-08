@@ -7,21 +7,30 @@
     <title></title>
 </head>
 <body>
+
+<%block name="left">
+<div class="row">
+    <div id="left side" class="col-md-2">
+
+    </div>
+</%block>
+
 <%block name="content">
+
+<h1>Overdue Items:</h1>
+
 <a href="/Store/WardrobeItem.send_late_emails" class="btn btn-success">Send Email Notices</a>
 <a href="/Store/WardrobeItem.send_late_texts" class="btn btn-success">Send SMS Notices</a>
 <table class="table table-striped">
     <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Size</th>
-        <th>Date out</th>
-        <th>Date Due</th>
-        <th></th>
+        <th class="Heading1">Name</th>
+        <th class="Heading1">Size</th>
+        <th class="Heading1">Date out</th>
+        <th class="Heading1">Date Due</th>
+        <th class="Heading1">Renter</th>
     </tr>
     <tr>
-        <td>Over 30 days late</td>
-        <td></td>
+        <td class="Heading">Over 30 days late</td>
         <td></td>
         <td></td>
         <td></td>
@@ -32,7 +41,6 @@
 
         <% rentedItem = hmod.WardrobeItem.objects.get(id=RentedLineItem.wardrobe_item_ID.id) %>
     <tr>
-        <td>${ rentedItem.id }</td>
         <td>${ rentedItem.name }</td>
         <td>${ rentedItem.size }</td>
         <td>${ RentedLineItem.date_out }</td>
@@ -46,8 +54,7 @@
     %endfor
 
     <tr>
-        <td>Over 60 days late</td>
-        <td></td>
+        <td class="Heading">Over 60 days late</td>
         <td></td>
         <td></td>
         <td></td>
@@ -57,7 +64,6 @@
 
         <% rentedItem = hmod.WardrobeItem.objects.get(id=RentedLineItem.wardrobe_item_ID.id) %>
     <tr>
-        <td>${ rentedItem.id }</td>
         <td>${ rentedItem.name }</td>
         <td>${ rentedItem.size }</td>
         <td>${ RentedLineItem.date_out }</td>
@@ -70,8 +76,7 @@
     </tr>
     %endfor
     <tr>
-        <td>Over 90 days late</td>
-        <td></td>
+        <td class="Heading">Over 90 days late</td>
         <td></td>
         <td></td>
         <td></td>
@@ -81,7 +86,6 @@
 
         <% rentedItem = hmod.WardrobeItem.objects.get(id=RentedLineItem.wardrobe_item_ID.id) %>
     <tr>
-        <td>${ rentedItem.id }</td>
         <td>${ rentedItem.name }</td>
         <td>${ rentedItem.size }</td>
         <td>${ RentedLineItem.date_out }</td>

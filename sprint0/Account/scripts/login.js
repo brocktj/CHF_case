@@ -6,7 +6,7 @@ $(function() {
         show:false,
     })
 
-    $('#show_modal').on('click',function(){
+    $('.show_modal').on('click',function(){
          $('#login_dialog').modal('show');
         $.ajax({
             url:'/Account/login.loginform',

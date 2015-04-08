@@ -8,13 +8,20 @@
 </head>
 <body>
 
+<%block name="left">
+<div class="row">
+    <div id="left side" class="col-md-2">
+
+    </div>
+</%block>
+
 <%block name="content">
 <table class="table table-striped">
     <tr>
-        <td>item</td>
+        <td><strong>Item</strong></td>
         <td></td>
-        <td>quantity</td>
-        <td>price</td>
+        <td><strong>Quantity</strong></td>
+        <td><strong>Price</strong></td>
 
 
     </tr>
@@ -71,7 +78,11 @@
     </tr>
 
 </table>
-<div><a class="btn btn-success" href="/Store/ShoppingCart.check_out/${ total }">Checkout</a> </div>
+<div>
+    <a class="btn btn-warning" href="/Store/ShoppingCart.check_out/${ total }">Checkout</a>
+    <a class="btn btn-success" href="/Store/StoreView/">Continue Shopping</a>
+</div>
+
 </%block>
 </body>
 </html>

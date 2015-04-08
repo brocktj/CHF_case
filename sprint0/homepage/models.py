@@ -84,7 +84,7 @@ class SaleItem(models.Model):
     area_ID = models.ForeignKey(Area)
 
 class Item(models.Model):
-    name = models.TextField()
+    name = models.TextField(null=True, blank=True)
     value = models.DecimalField(max_digits=7, decimal_places=2)
     description = models.TextField(null=True)
     standard_rental_value = models.DecimalField(max_digits=7, decimal_places=2)
@@ -92,13 +92,13 @@ class Item(models.Model):
     is_available_for_rental = models.BooleanField(default=True)
 
 class WardrobeItem(Item):
-    size_modifier = models.TextField()
-    size = models.TextField()
-    gender = models.CharField(max_length=1)
-    color = models.TextField()
+    size_modifier = models.TextField(null=True, blank=True)
+    size = models.TextField(null=True, blank=True)
+    gender = models.CharField(null=True, blank=True, max_length=1)
+    color = models.TextField(null=True, blank=True)
     pattern = models.TextField(null=True, blank=True)
     note = models.TextField(null=True, blank=True)
-    start_year = models.IntegerField()
+    start_year = models.IntegerField(null=True, blank=True)
     end_year = models.IntegerField(null=True, blank=True)
 
 class ShoppingCart(models.Model):

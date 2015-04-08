@@ -151,8 +151,8 @@ def Create(request):
     wdbitem.end_year = None
     wdbitem.size = ''
     wdbitem.size_modifier = ''
-    wdbitem.value = None
-    wdbitem.standard_rental_value = None
+    wdbitem.value = 0.00
+    wdbitem.standard_rental_value = 0.00
     wdbitem.is_rentable = True
     wdbitem.save()
 

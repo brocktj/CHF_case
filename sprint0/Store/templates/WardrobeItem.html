@@ -1,4 +1,4 @@
-<%inherit file="Managerbase.htm" />
+<%inherit file="/homepage/templates/base.htm" />
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -6,8 +6,27 @@
     <title></title>
 </head>+
 <body>
+
+<%block name="left">
+<div class="row">
+    <div id="left side" class="col-md-2">
+        <nav>
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="/Store/BulkProduct/">Bulk Products</a></li>
+                <li><a href="/Store/PersonalProduct/">Personal Products</a></li>
+                <li><a href="/Store/IndividualProduct/">Individual Products</a></li>
+                <li><a href="/Store/WardrobeItem/">Wardrobe Items</a></li>
+            </ul>
+        </nav>
+    </div>
+</%block>
+
 <%block name="content">
-<a href="/Store/WardrobeItem.Create">Add Item</a>
+<br>
+<br>
+<a href="/Store/WardrobeItem.Create" class="btn btn-warning">Add Item</a>
+<br>
+<br>
 <table class="table table-striped">
     <tr>
         <th>ID</th>
