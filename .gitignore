@@ -55,8 +55,3 @@ docs/_build/
 
 # PyBuilder
 target/
-sprint0/Account/cached_templates/templates/homepage/templates/Adminbase.htm.py
-*.py
-sprint0/Account/cached_templates/templates/homepage/templates/Adminbase.htm.py
-sprint0/Account/cached_templates/templates/homepage/templates/base.htm.py
-sprint0/Account/cached_templates/templates/homepage/templates/Adminbase.htm.py

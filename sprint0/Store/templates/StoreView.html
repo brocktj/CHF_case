@@ -16,18 +16,14 @@
 
 <%block name="content">
 <body>
-<br>
 <form id="live-search" action="" class="styled" method="post">
     <fieldset>
-        <strong class="search">Search for Items:  </strong><input type="text" class="text-input" id="filter" value="" />
+        Search:<input type="text" class="text-input" id="filter" value="" />
         <span id="filter-count"></span>
     </fieldset>
 </form>
-
-<a id="cart" class="cart btn btn-success" href="/Store/ShoppingCart.view_cart/">View Cart</a>
-<br>
-<br>
-<div><a href="/Store/ShoppingCart.delete_cart" class="delete_cart">Delete the cart</a></div>
+<a href="/Store/ShoppingCart.delete_cart">Delete the cart</a>
+<a class="btn btn-success" href="/Store/ShoppingCart.view_cart/">View Cart</a>
 <div>
     <h2>Products</h2>
 <table class="table">

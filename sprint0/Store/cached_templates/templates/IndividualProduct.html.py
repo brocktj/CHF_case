@@ -4,7 +4,7 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1428466604.496058
+_modified_time = 1428430045.635852
 _enable_loop = True
 _template_filename = 'C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0\\Store\\templates/IndividualProduct.html'
 _template_uri = 'IndividualProduct.html'
@@ -30,9 +30,9 @@ def render_body(context,**pageargs):
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         def left():
             return render_left(context._locals(__M_locals))
-        indProducts = context.get('indProducts', UNDEFINED)
         def content():
             return render_content(context._locals(__M_locals))
+        indProducts = context.get('indProducts', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n\r\n\r\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'left'):
@@ -65,11 +65,11 @@ def render_left(context,**pageargs):
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        indProducts = context.get('indProducts', UNDEFINED)
         def content():
             return render_content(context)
+        indProducts = context.get('indProducts', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\r\n<br>\r\n<br>\r\n<a href="/Store/IndividualProduct.Create" class="btn btn-warning">Add item</a>\r\n<br>\r\n<br>\r\n<table class="table table-striped">\r\n    <tr>\r\n        <th>ID</th>\r\n        <th>Name</th>\r\n        <th>Description</th>\r\n        <th>Date Made</th>\r\n        <th>Current Price</th>\r\n        <th>Action</th>\r\n    </tr>\r\n')
+        __M_writer('\r\n<a href="/Store/IndividualProduct.Create">Add item</a>\r\n<table class="table table-striped">\r\n    <tr>\r\n        <th>ID</th>\r\n        <th>Name</th>\r\n        <th>Description</th>\r\n        <th>Date Made</th>\r\n        <th>Current Price</th>\r\n        <th>Action</th>\r\n    </tr>\r\n')
         for IndividualProduct in indProducts:
             __M_writer('    <tr>\r\n        <td>')
             __M_writer(str( IndividualProduct.id ))
@@ -94,6 +94,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"line_map": {"65": 17, "72": 17, "73": 32, "74": 33, "75": 34, "76": 34, "77": 35, "78": 35, "79": 36, "80": 36, "81": 37, "82": 37, "83": 38, "84": 38, "85": 39, "86": 39, "87": 39, "88": 39, "89": 43, "27": 0, "95": 89, "37": 1, "42": 15, "47": 44, "53": 4, "59": 4}, "uri": "IndividualProduct.html", "source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0\\Store\\templates/IndividualProduct.html"}
+{"uri": "IndividualProduct.html", "filename": "C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0\\Store\\templates/IndividualProduct.html", "line_map": {"65": 17, "72": 17, "73": 28, "74": 29, "75": 30, "76": 30, "77": 31, "78": 31, "79": 32, "80": 32, "81": 33, "82": 33, "83": 34, "84": 34, "85": 35, "86": 35, "87": 35, "88": 35, "89": 39, "27": 0, "95": 89, "37": 1, "42": 15, "47": 40, "53": 4, "59": 4}, "source_encoding": "ascii"}
 __M_END_METADATA
 """
