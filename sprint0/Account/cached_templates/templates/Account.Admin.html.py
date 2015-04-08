@@ -4,9 +4,9 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1428464086.64478
+_modified_time = 1428357216.993311
 _enable_loop = True
-_template_filename = 'C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0\\Account\\templates/Account.Admin.html'
+_template_filename = 'C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\Account\\templates/Account.Admin.html'
 _template_uri = 'Account.Admin.html'
 _source_encoding = 'ascii'
 import os, os.path, re
@@ -32,12 +32,12 @@ def render_body(context,**pageargs):
             return render_content(context._locals(__M_locals))
         user = context.get('user', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\r\n\r\n')
+        __M_writer('\n<!DOCTYPE html>\n<html>\n<head lang="en">\n    <meta charset="UTF-8">\n    <title></title>\n</head>\n<body>\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
             context['self'].content(**pageargs)
         
 
-        __M_writer('\r\n\r\n\r\n\r\n</body>\r\n</html>')
+        __M_writer('\n\n\n\n</body>\n</html>')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -50,25 +50,25 @@ def render_content(context,**pageargs):
             return render_content(context)
         user = context.get('user', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\r\n<h1>Admin Page</h1>\r\n<p>Welcome ')
+        __M_writer('\n<h1>Admin Page</h1>\n<p>Welcome ')
         __M_writer(str( user.first_name ))
         __M_writer(' ')
         __M_writer(str( user.last_name))
-        __M_writer(' </p>\r\n\r\n<table class="table table-striped">\r\n    <tr>\r\n        <td>\r\n            Username\r\n        </td>\r\n        <td>\r\n            ')
+        __M_writer(' </p>\n\n<table class="table table-striped">\n    <tr>\n        <td>\n            Username\n        </td>\n        <td>\n            ')
         __M_writer(str( user.username ))
-        __M_writer('\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td>\r\n            Name\r\n        </td>\r\n        <td>\r\n            ')
+        __M_writer('\n        </td>\n    </tr>\n    <tr>\n        <td>\n            Name\n        </td>\n        <td>\n            ')
         __M_writer(str( user.first_name ))
         __M_writer(' ')
         __M_writer(str( user.last_name ))
-        __M_writer('\r\n        </td>\r\n    </tr>\r\n    <tr>\r\n        <td>\r\n            Address\r\n        </td>\r\n        <td>\r\n            <p>')
+        __M_writer('\n        </td>\n    </tr>\n    <tr>\n        <td>\n            Address\n        </td>\n        <td>\n            <p>')
         __M_writer(str( user.address ))
-        __M_writer('</p>\r\n            <p>')
+        __M_writer('</p>\n            <p>')
         __M_writer(str( user.city ))
-        __M_writer('</p>\r\n            <p>')
+        __M_writer('</p>\n            <p>')
         __M_writer(str( user.state ))
-        __M_writer('</p>\r\n            <p>')
+        __M_writer('</p>\n            <p>')
         __M_writer(str( user.zip ))
-        __M_writer('</p>\r\n        </td>\r\n    </tr>\r\n\r\n\r\n</table>\r\n<div><a href="/Account/Account.update_password">Change Password</a></div>\r\n<div><a href="/Account/Account.edit_user_info" class="btn btn-success">Update your information</a></div>\r\n')
+        __M_writer('</p>\n        </td>\n    </tr>\n\n\n</table>\n<div><a href="/Account/Account.update_password">Change Password</a></div>\n<div><a href="/Account/Account.edit_user_info" class="btn btn-success">Update your information</a></div>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -76,6 +76,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"line_map": {"64": 29, "65": 29, "66": 30, "67": 30, "68": 31, "69": 31, "70": 32, "71": 32, "77": 71, "27": 0, "35": 1, "40": 40, "46": 3, "53": 3, "54": 5, "55": 5, "56": 5, "57": 5, "58": 13, "59": 13, "60": 21, "61": 21, "62": 21, "63": 21}, "uri": "Account.Admin.html", "source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0\\Account\\templates/Account.Admin.html"}
+{"uri": "Account.Admin.html", "line_map": {"64": 35, "65": 35, "66": 36, "67": 36, "68": 37, "69": 37, "70": 38, "71": 38, "77": 71, "27": 0, "35": 1, "40": 46, "46": 9, "53": 9, "54": 11, "55": 11, "56": 11, "57": 11, "58": 19, "59": 19, "60": 27, "61": 27, "62": 27, "63": 27}, "source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\Account\\templates/Account.Admin.html"}
 __M_END_METADATA
 """
