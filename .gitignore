@@ -55,3 +55,5 @@ docs/_build/
 
 # PyBuilder
 target/
+
+sprint0/homepage/cached_templates/templates/base.htm.py
