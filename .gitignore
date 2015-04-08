@@ -55,3 +55,30 @@ docs/_build/
 
 # PyBuilder
 target/
+sprint0/Account/cached_templates/templates/homepage/templates/Adminbase.htm.py
+*.py
+sprint0/Account/cached_templates/templates/homepage/templates/Adminbase.htm.py
+sprint0/Account/cached_templates/templates/homepage/templates/base.htm.py
+sprint0/Account/cached_templates/templates/homepage/templates/Adminbase.htm.py
+
+sprint0/homepage/cached_templates/templates/EventDetails.html.py
+
+sprint0/homepage/cached_templates/templates/Events.html.py
+
+sprint0/homepage/cached_templates/templates/homepage/templates/base.htm.py
+
+sprint0/homepage/cached_templates/templates/Users.html.py
+
+sprint0/Store/cached_templates/templates/BulkItemDetail.html.py
+
+sprint0/Store/cached_templates/templates/BulkProduct.html.py
+
+sprint0/Store/cached_templates/templates/BulkProduct.html.py
+
+sprint0/Store/cached_templates/templates/homepage/templates/base.htm.py
+
+sprint0/Store/cached_templates/templates/IndividualProduct.html.py
+
+sprint0/Store/cached_templates/templates/PersonalProduct.html.py
+
+sprint0/Store/cached_templates/templates/StoreView.html.py
