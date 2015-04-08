@@ -4,9 +4,9 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1428468678.197556
+_modified_time = 1428375529.953032
 _enable_loop = True
-_template_filename = 'C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0\\Account\\templates/login.html'
+_template_filename = 'C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\Account\\templates/login.html'
 _template_uri = 'login.html'
 _source_encoding = 'ascii'
 import os, os.path, re
@@ -37,13 +37,13 @@ def render_body(context,**pageargs):
         def content():
             return render_content(context._locals(__M_locals))
         __M_writer = context.writer()
-        __M_writer('\r\n')
-        __M_writer('\r\n<!DOCTYPE html>\r\n<html>\r\n<head lang="en">\r\n    <meta charset="UTF-8">\r\n    <title></title>\r\n</head>\r\n<body>\r\n')
+        __M_writer('\n')
+        __M_writer('\n<!DOCTYPE html>\n<html>\n<head lang="en">\n    <meta charset="UTF-8">\n    <title></title>\n</head>\n<body>\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'content'):
             context['self'].content(**pageargs)
         
 
-        __M_writer('\r\n</body>\r\n</html>')
+        __M_writer('\n</body>\n</html>')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -56,9 +56,9 @@ def render_content(context,**pageargs):
         def content():
             return render_content(context)
         __M_writer = context.writer()
-        __M_writer('\r\n<br>\r\n<br>\r\n<div><a href="/Account/SignUp.Create" class="btn btn-primary">Sign Up</a></div>\r\n<div><strong>or login to user our services</strong></div>\r\n<br>\r\n<br>\r\n<div><a href="/password_reset/" class="btn btn-primary">Reset Password</a></div>\r\n<div class="modal fade" id="login_dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">\r\n  <div class="modal-dialog">\r\n    <div class="modal-content">\r\n      <div class="modal-header">\r\n        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>\r\n        <h4 class="modal-title" id="myModalLabel">Colonial Heritage Foundation</h4>\r\n      </div>\r\n      <div class="modal-body">\r\n        ...\r\n      </div>\r\n      <div class="modal-footer">\r\n\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<h1>')
+        __M_writer('\n<div><a href="/Account/SignUp.Create">Sign Up</a> or login to user our services</div>\n<div><a href="/password_reset/">Reset Password</a></div>\n<div class="modal fade" id="login_dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">\n  <div class="modal-dialog">\n    <div class="modal-content">\n      <div class="modal-header">\n        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>\n        <h4 class="modal-title" id="myModalLabel">Modal title</h4>\n      </div>\n      <div class="modal-body">\n        ...\n      </div>\n      <div class="modal-footer">\n\n      </div>\n    </div>\n  </div>\n</div>\n\n<h1>')
         __M_writer(str( warnings ))
-        __M_writer('</h1>\r\n')
+        __M_writer('</h1>\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -66,6 +66,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"line_map": {"16": 2, "32": 0, "67": 61, "52": 13, "40": 1, "41": 5, "59": 13, "60": 38, "61": 38, "46": 39}, "uri": "login.html", "source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0\\Account\\templates/login.html"}
+{"source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\Account\\templates/login.html", "uri": "login.html", "line_map": {"16": 2, "32": 0, "67": 61, "52": 13, "40": 1, "41": 5, "59": 13, "60": 33, "61": 33, "46": 34}}
 __M_END_METADATA
 """

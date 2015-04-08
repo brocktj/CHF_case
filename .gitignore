@@ -55,6 +55,7 @@ docs/_build/
 
 # PyBuilder
 target/
+<<<<<<< HEAD
 sprint0/Account/cached_templates/templates/homepage/templates/Adminbase.htm.py
 *.py
 sprint0/Account/cached_templates/templates/homepage/templates/Adminbase.htm.py
@@ -82,3 +83,5 @@ sprint0/Store/cached_templates/templates/IndividualProduct.html.py
 sprint0/Store/cached_templates/templates/PersonalProduct.html.py
 
 sprint0/Store/cached_templates/templates/StoreView.html.py
+=======
+>>>>>>> parent of 6d1149a... Style Changes
