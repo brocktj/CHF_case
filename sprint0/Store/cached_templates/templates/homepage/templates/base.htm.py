@@ -4,21 +4,13 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-<<<<<<< HEAD
 _modified_time = 1428375740.654837
-=======
-_modified_time = 1428449317.274538
->>>>>>> Style-Changes
 _enable_loop = True
 _template_filename = 'C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0/homepage/templates/base.htm'
 _template_uri = '/homepage/templates/base.htm'
 _source_encoding = 'ascii'
 import os, os.path, re
-<<<<<<< HEAD
 _exports = ['left', 'footer', 'header', 'content']
-=======
-_exports = ['content', 'footer', 'left', 'header']
->>>>>>> Style-Changes
 
 
 from django_mako_plus.controller import static_files 
@@ -27,7 +19,6 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-<<<<<<< HEAD
         def left():
             return render_left(context._locals(__M_locals))
         def content():
@@ -39,19 +30,6 @@ def render_body(context,**pageargs):
             return render_footer(context._locals(__M_locals))
         request = context.get('request', UNDEFINED)
         STATIC_URL = context.get('STATIC_URL', UNDEFINED)
-=======
-        request = context.get('request', UNDEFINED)
-        def content():
-            return render_content(context._locals(__M_locals))
-        self = context.get('self', UNDEFINED)
-        def header():
-            return render_header(context._locals(__M_locals))
-        def left():
-            return render_left(context._locals(__M_locals))
-        STATIC_URL = context.get('STATIC_URL', UNDEFINED)
-        def footer():
-            return render_footer(context._locals(__M_locals))
->>>>>>> Style-Changes
         __M_writer = context.writer()
         __M_writer('\n')
         __M_writer('\n')
@@ -59,21 +37,12 @@ def render_body(context,**pageargs):
         
         __M_locals_builtin_stored = __M_locals_builtin()
         __M_locals.update(__M_dict_builtin([(__M_key, __M_locals_builtin_stored[__M_key]) for __M_key in ['static_renderer'] if __M_key in __M_locals_builtin_stored]))
-<<<<<<< HEAD
         __M_writer('\n\n<!DOCTYPE html>\n<html>\n<meta charset="UTF-8">\n<meta name="description" content="Colonial heritage page website, store and information pages">\n<meta name="keywords" content="Colonial,Heritage,Foundation,Utah,Historical,Reenactment,History,enrichment,generations">\n<head>\n\n    <title>Colonial Heritage Foundation; Preserving History</title>\n\n')
         __M_writer('\n\n    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>\n    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">\n    <script src="')
-=======
-        __M_writer('\r\n\r\n<!DOCTYPE html>\r\n<html>\r\n<meta charset="UTF-8">\r\n<meta name="description" content="Colonial heritage page website, store and information pages">\r\n<meta name="keywords" content="Colonial,Heritage,Foundation,Utah,Historical,Reenactment,History,enrichment,generations">\r\n<head>\r\n\r\n\r\n\r\n')
-        __M_writer('\r\n\r\n    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>\r\n    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">\r\n    <script src="')
->>>>>>> Style-Changes
         __M_writer(str( STATIC_URL ))
         __M_writer('homepage/media/jquery.form.js"></script>\n    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>\n    <script src="')
         __M_writer(str( STATIC_URL ))
-<<<<<<< HEAD
         __M_writer('homepage/media/jquery.loadmodal.js"></script>\n    <link rel="icon" type="image/x-icon"\n          href="http://fc07.deviantart.net/fs70/f/2012/185/5/f/triforce_icon_free_to_use_by_kittyzelda64-d560tnh.png"/>\n\n')
-=======
-        __M_writer('homepage/media/jquery.loadmodal.js"></script>\r\n    <link rel="icon" type="image/x-icon"\r\n          href="http://fc07.deviantart.net/fs70/f/2012/185/5/f/triforce_icon_free_to_use_by_kittyzelda64-d560tnh.png"/>\r\n\r\n    <title>Colonial Heritage Foundation; Preserving History</title>\r\n\r\n')
->>>>>>> Style-Changes
         __M_writer('    ')
         __M_writer(str( static_renderer.get_template_css(request, context) ))
         __M_writer('\n\n</head>\n\n\n<body>\n')
@@ -104,23 +73,7 @@ def render_body(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
-<<<<<<< HEAD
 def render_left(context,**pageargs):
-=======
-def render_content(context,**pageargs):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        def content():
-            return render_content(context)
-        __M_writer = context.writer()
-        __M_writer('\r\n\r\n        ')
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
-def render_footer(context,**pageargs):
->>>>>>> Style-Changes
     __M_caller = context.caller_stack._push_frame()
     try:
         def left():
@@ -169,7 +122,6 @@ def render_header(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
-<<<<<<< HEAD
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
@@ -185,10 +137,5 @@ def render_content(context,**pageargs):
 """
 __M_BEGIN_METADATA
 {"source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0/homepage/templates/base.htm", "uri": "/homepage/templates/base.htm", "line_map": {"107": 34, "68": 122, "69": 124, "70": 124, "108": 52, "82": 93, "76": 93, "109": 53, "16": 4, "18": 0, "131": 99, "110": 57, "88": 120, "100": 34, "111": 58, "94": 120, "112": 59, "34": 2, "35": 4, "36": 5, "40": 5, "41": 17, "42": 21, "43": 21, "44": 23, "45": 23, "46": 28, "47": 28, "48": 28, "113": 60, "114": 62, "115": 64, "116": 64, "53": 88, "118": 67, "119": 70, "137": 131, "58": 95, "117": 66, "125": 99, "63": 101}}
-=======
-"""
-__M_BEGIN_METADATA
-{"filename": "C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0/homepage/templates/base.htm", "source_encoding": "ascii", "line_map": {"128": 66, "129": 68, "130": 69, "131": 72, "68": 124, "69": 126, "70": 126, "137": 131, "82": 101, "76": 101, "16": 4, "18": 0, "127": 66, "88": 122, "100": 95, "125": 62, "122": 59, "94": 122, "112": 36, "34": 2, "35": 4, "36": 5, "40": 5, "41": 17, "42": 21, "43": 21, "44": 23, "45": 23, "46": 30, "47": 30, "48": 30, "53": 90, "119": 36, "120": 54, "121": 55, "58": 97, "123": 60, "124": 61, "106": 95, "126": 64, "63": 103}, "uri": "/homepage/templates/base.htm"}
->>>>>>> Style-Changes
 __M_END_METADATA
 """

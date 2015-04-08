@@ -4,11 +4,7 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-<<<<<<< HEAD
 _modified_time = 1428376342.975955
-=======
-_modified_time = 1428467643.231205
->>>>>>> Style-Changes
 _enable_loop = True
 _template_filename = 'C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\homepage\\templates/EventDetails.html'
 _template_uri = 'EventDetails.html'
@@ -78,19 +74,11 @@ def render_content(context,**pageargs):
         def content():
             return render_content(context)
         __M_writer = context.writer()
-<<<<<<< HEAD
         __M_writer('\n<table>\n    <tr>\n        <td>\n<img src="http://provo-canyon-parks.weebly.com/uploads/8/4/9/4/8494501/6284450.jpg?400" />\n\n        </td>\n        <td>\n            <div>\n                <h2>')
         __M_writer(str( event.name ))
         __M_writer('</h2>\n\n                <div>')
         __M_writer(str( event.description ))
         __M_writer('</div>\n                <div>')
-=======
-        __M_writer('\r\n<table>\r\n    <tr>\r\n        <td>\r\n<img src="http://provo-canyon-parks.weebly.com/uploads/8/4/9/4/8494501/6284450.jpg?400" />\r\n\r\n        </td>\r\n        <td>\r\n            <div>\r\n                <h2 class="event_detail">')
-        __M_writer(str( event.name ))
-        __M_writer('</h2>\r\n\r\n                <div class="event_detail">')
-        __M_writer(str( event.description ))
-        __M_writer('</div>\r\n                <div class="event_detail">')
->>>>>>> Style-Changes
         __M_writer(str( event.start_date ))
         __M_writer(' through ')
         __M_writer(str( event.end_date ))
@@ -126,10 +114,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-<<<<<<< HEAD
 {"source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\homepage\\templates/EventDetails.html", "uri": "EventDetails.html", "line_map": {"115": 109, "69": 10, "97": 45, "77": 10, "78": 19, "79": 19, "80": 21, "81": 21, "82": 22, "83": 22, "84": 22, "85": 22, "86": 28, "87": 29, "88": 29, "90": 29, "91": 32, "92": 32, "29": 0, "94": 44, "95": 45, "96": 45, "16": 2, "98": 45, "99": 46, "100": 46, "101": 59, "102": 60, "103": 61, "40": 1, "41": 2, "106": 62, "107": 63, "108": 63, "109": 67, "46": 71, "93": 44, "104": 61, "51": 82, "105": 62, "57": 72, "63": 72}}
-=======
-{"line_map": {"115": 109, "69": 10, "97": 45, "77": 10, "78": 19, "79": 19, "80": 21, "81": 21, "82": 22, "83": 22, "84": 22, "85": 22, "86": 28, "87": 29, "88": 29, "90": 29, "91": 32, "92": 32, "29": 0, "94": 44, "95": 45, "96": 45, "16": 2, "98": 45, "99": 46, "100": 46, "101": 59, "102": 60, "103": 61, "40": 1, "41": 2, "106": 62, "107": 63, "108": 63, "109": 67, "46": 71, "93": 44, "104": 61, "51": 82, "105": 62, "57": 72, "63": 72}, "uri": "EventDetails.html", "source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0\\homepage\\templates/EventDetails.html"}
->>>>>>> Style-Changes
 __M_END_METADATA
 """

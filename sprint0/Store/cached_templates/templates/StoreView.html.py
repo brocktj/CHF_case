@@ -4,11 +4,7 @@ UNDEFINED = runtime.UNDEFINED
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-<<<<<<< HEAD
 _modified_time = 1428375033.570766
-=======
-_modified_time = 1428466036.594862
->>>>>>> Style-Changes
 _enable_loop = True
 _template_filename = 'C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\Store\\templates/StoreView.html'
 _template_uri = 'StoreView.html'
@@ -32,7 +28,6 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-<<<<<<< HEAD
         def left():
             return render_left(context._locals(__M_locals))
         def content():
@@ -41,16 +36,6 @@ def render_body(context,**pageargs):
         wdbItems = context.get('wdbItems', UNDEFINED)
         settings = context.get('settings', UNDEFINED)
         persProducts = context.get('persProducts', UNDEFINED)
-=======
-        blkProducts = context.get('blkProducts', UNDEFINED)
-        def content():
-            return render_content(context._locals(__M_locals))
-        settings = context.get('settings', UNDEFINED)
-        def left():
-            return render_left(context._locals(__M_locals))
-        persProducts = context.get('persProducts', UNDEFINED)
-        wdbItems = context.get('wdbItems', UNDEFINED)
->>>>>>> Style-Changes
         __M_writer = context.writer()
         __M_writer('\n\n\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'left'):
@@ -83,7 +68,6 @@ def render_left(context,**pageargs):
 def render_content(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-<<<<<<< HEAD
         persProducts = context.get('persProducts', UNDEFINED)
         blkProducts = context.get('blkProducts', UNDEFINED)
         def content():
@@ -92,16 +76,6 @@ def render_content(context,**pageargs):
         settings = context.get('settings', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\n<body>\n<form id="live-search" action="" class="styled" method="post">\n    <fieldset>\n        Search:<input type="text" class="text-input" id="filter" value="" />\n        <span id="filter-count"></span>\n    </fieldset>\n</form>\n<a href="/Store/ShoppingCart.delete_cart">Delete the cart</a>\n<a class="btn btn-success" href="/Store/ShoppingCart.view_cart/">View Cart</a>\n<div>\n    <h2>Products</h2>\n<table class="table">\n    <tr>\n\n')
-=======
-        settings = context.get('settings', UNDEFINED)
-        persProducts = context.get('persProducts', UNDEFINED)
-        wdbItems = context.get('wdbItems', UNDEFINED)
-        def content():
-            return render_content(context)
-        blkProducts = context.get('blkProducts', UNDEFINED)
-        __M_writer = context.writer()
-        __M_writer('\r\n<body>\r\n<br>\r\n<form id="live-search" action="" class="styled" method="post">\r\n    <fieldset>\r\n        <strong class="search">Search for Items:  </strong><input type="text" class="text-input" id="filter" value="" />\r\n        <span id="filter-count"></span>\r\n    </fieldset>\r\n</form>\r\n\r\n<a id="cart" class="cart btn btn-success" href="/Store/ShoppingCart.view_cart/">View Cart</a>\r\n<br>\r\n<br>\r\n<div><a href="/Store/ShoppingCart.delete_cart" class="delete_cart">Delete the cart</a></div>\r\n<div>\r\n    <h2>Products</h2>\r\n<table class="table">\r\n    <tr>\r\n\r\n')
->>>>>>> Style-Changes
         for BulkProduct in blkProducts:
             __M_writer('\n    <td>\n    <div class="item_container">\n        <img  class="center=block" src="')
             __M_writer(str( settings.STATIC_URL))
@@ -161,10 +135,6 @@ def render_content(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-<<<<<<< HEAD
 {"source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\PycharmProjects\\CHF_case-master\\sprint0\\Store\\templates/StoreView.html", "uri": "StoreView.html", "line_map": {"128": 88, "129": 88, "130": 91, "136": 130, "27": 0, "40": 1, "45": 15, "50": 94, "56": 4, "62": 4, "68": 17, "78": 17, "79": 32, "80": 33, "81": 36, "82": 36, "83": 36, "84": 36, "85": 37, "86": 37, "87": 38, "88": 38, "89": 39, "90": 39, "91": 41, "92": 41, "93": 44, "94": 44, "95": 49, "96": 57, "97": 58, "98": 61, "99": 61, "100": 61, "101": 61, "102": 62, "103": 62, "104": 63, "105": 63, "106": 64, "107": 64, "108": 66, "109": 67, "110": 68, "111": 69, "112": 71, "113": 73, "114": 73, "115": 78, "116": 83, "117": 84, "118": 85, "119": 85, "120": 85, "121": 85, "122": 86, "123": 86, "124": 87, "125": 87, "126": 88, "127": 88}}
-=======
-{"line_map": {"128": 92, "129": 92, "130": 95, "136": 130, "27": 0, "40": 1, "45": 15, "50": 98, "56": 4, "62": 4, "68": 17, "78": 17, "79": 36, "80": 37, "81": 40, "82": 40, "83": 40, "84": 40, "85": 41, "86": 41, "87": 42, "88": 42, "89": 43, "90": 43, "91": 45, "92": 45, "93": 48, "94": 48, "95": 53, "96": 61, "97": 62, "98": 65, "99": 65, "100": 65, "101": 65, "102": 66, "103": 66, "104": 67, "105": 67, "106": 68, "107": 68, "108": 70, "109": 71, "110": 72, "111": 73, "112": 75, "113": 77, "114": 77, "115": 82, "116": 87, "117": 88, "118": 89, "119": 89, "120": 89, "121": 89, "122": 90, "123": 90, "124": 91, "125": 91, "126": 92, "127": 92}, "uri": "StoreView.html", "source_encoding": "ascii", "filename": "C:\\Users\\Tanner\\Documents\\GitHub\\CHF_case\\sprint0\\Store\\templates/StoreView.html"}
->>>>>>> Style-Changes
 __M_END_METADATA
 """
